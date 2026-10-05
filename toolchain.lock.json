@@ -1,0 +1,13 @@
+{
+  "librelane_version": "3.0.14",
+  "image_tag": "ghcr.io/librelane/librelane:3.0.14",
+  "image_digest": "ghcr.io/librelane/librelane@sha256:f91b21d75f79871f9ccf37451020b5d2f7b3236881a997ff709c561e8280a30f",
+  "pdk": "sky130A",
+  "pdk_family": "sky130",
+  "pdk_revision": "8afc8346a57fe1ab7934ba5a6056ea8b43078e71",
+  "colima_version": "0.10.3",
+  "colima_sha256": "980ad8bf61a4ca370243f4cb41401a61276dcd2c2502bee7b9b86f9250169f34",
+  "lima_version": "2.2.1",
+  "lima_sha256": "9e9eacce88f37e185c346bad73aa6136f738d8cdf8c3bb23cd42b071824bc66e",
+  "docker_context": "colima-chip"
+}

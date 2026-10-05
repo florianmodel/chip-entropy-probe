@@ -1,0 +1,8 @@
+{
+  "image_tag": "chip-ngspice:39",
+  "built_image_id": "sha256:ad4965835f4617f2a223d6e84fd8ac1a88a8483052d7ba673fa4f673c6462aa7",
+  "ngspice_debian_version": "39.3+ds-1",
+  "base_image": "debian:bookworm-slim@sha256:3783cc01769c7b2b1b83a5c5ad96c815348e28ed7da68e2e3687004faa906251",
+  "platform": "linux/arm64",
+  "note": "Indirect Debian dependencies are not snapshot-pinned; record the actual image ID for each simulation run."
+}

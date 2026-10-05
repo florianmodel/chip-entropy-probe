@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "checks": {
+    "timing__hold__ws__corner:nom_tt_025C_1v80": 0.33061551654404436,
+    "timing__setup__ws__corner:nom_tt_025C_1v80": 1.2304568823226842,
+    "timing__hold__ws__corner:nom_ss_100C_1v60": 0.6702526501301903,
+    "timing__setup__ws__corner:nom_ss_100C_1v60": 0.5028155811812307,
+    "timing__hold__ws__corner:nom_ff_n40C_1v95": 0.20495289379084441,
+    "timing__setup__ws__corner:nom_ff_n40C_1v95": 1.5006478706643431,
+    "timing__hold__ws": 0.20424067182261654,
+    "timing__setup__ws": 0.49574323826974404,
+    "timing__hold__ws__corner:min_tt_025C_1v80": 0.3298442445870242,
+    "timing__setup__ws__corner:min_tt_025C_1v80": 1.2337862192230904,
+    "timing__hold__ws__corner:min_ss_100C_1v60": 0.6692822041569194,
+    "timing__setup__ws__corner:min_ss_100C_1v60": 0.5080969122587388,
+    "timing__hold__ws__corner:min_ff_n40C_1v95": 0.20424067182261654,
+    "timing__setup__ws__corner:min_ff_n40C_1v95": 1.5031130099379397,
+    "timing__hold__ws__corner:max_tt_025C_1v80": 0.3319798696575928,
+    "timing__setup__ws__corner:max_tt_025C_1v80": 1.225917624335823,
+    "timing__hold__ws__corner:max_ss_100C_1v60": 0.6718651380967602,
+    "timing__setup__ws__corner:max_ss_100C_1v60": 0.49574323826974404,
+    "timing__hold__ws__corner:max_ff_n40C_1v95": 0.20621052671313247,
+    "timing__setup__ws__corner:max_ff_n40C_1v95": 1.4970631824610514
+  },
+  "note": "Same routed/extracted layout, precise register-only asynchronous endpoints."
+}

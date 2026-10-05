@@ -1,0 +1,74 @@
+[
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": -40,
+    "stages": 71,
+    "frequency_MHz": 390.8738573011767,
+    "rising_edges_after_50ns": 59
+  },
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": -40,
+    "stages": 95,
+    "frequency_MHz": 292.7426699860437,
+    "rising_edges_after_50ns": 44
+  },
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": -40,
+    "stages": 127,
+    "frequency_MHz": 219.2982695020752,
+    "rising_edges_after_50ns": 33
+  },
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": 25,
+    "stages": 71,
+    "frequency_MHz": 390.6250404877462,
+    "rising_edges_after_50ns": 59
+  },
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": 25,
+    "stages": 95,
+    "frequency_MHz": 292.96234455943863,
+    "rising_edges_after_50ns": 44
+  },
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": 25,
+    "stages": 127,
+    "frequency_MHz": 219.2982563014947,
+    "rising_edges_after_50ns": 33
+  },
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": 100,
+    "stages": 71,
+    "frequency_MHz": 385.3298070087934,
+    "rising_edges_after_50ns": 58
+  },
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": 100,
+    "stages": 95,
+    "frequency_MHz": 288.8261028237437,
+    "rising_edges_after_50ns": 43
+  },
+  {
+    "corner": "ff",
+    "voltage": 1.95,
+    "temp_C": 100,
+    "stages": 127,
+    "frequency_MHz": 216.40906818747933,
+    "rising_edges_after_50ns": 33
+  }
+]

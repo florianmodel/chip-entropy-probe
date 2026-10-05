@@ -1,0 +1,14 @@
+{
+  "candidate_shuttle": "TTSKY26d",
+  "repositories": {
+    "ttsky-template": {"repo": "ttsky-verilog-template", "commit": "68c3fd3f3ec640e5edcb6a5f74f360ebc016bb2a"},
+    "tt-support": {"repo": "tt-support-tools", "commit": "01d5d2814fa9dd61e9d211e0b235a4a592a9316a"},
+    "tt-sdk": {"repo": "tt-micropython-firmware", "commit": "d485c7a9986336024e35d790568fca33be1c5665"},
+    "tt-gds-action": {"repo": "tt-gds-action", "commit": "196c38e77f4d320f3b6d460e3f1068bb297e4580"}
+  },
+  "tile": "1x1",
+  "tile_um": [161, 111.52],
+  "librelane_version": "3.0.14",
+  "local_precheck_host_packages": {"gdstk": "1.0.1", "klayout": "0.30.8", "PyYAML": "6.0.3", "numpy": "2.4.2"},
+  "local_precheck_eda": "Pinned LibreLane container supplies Magic/KLayout; native Yosys 0.62 substitutes only the yowasp-yosys read_verilog syntax command."
+}

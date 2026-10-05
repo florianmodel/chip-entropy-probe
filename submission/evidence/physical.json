@@ -1,0 +1,1920 @@
+{
+  "status": "PASS",
+  "failures": {},
+  "design": "tt_um_entropy_probe",
+  "ring_lengths": [
+    71,
+    95,
+    127
+  ],
+  "positions_um": {
+    "probe.bank.ring71.ro_gate": [
+      8.28,
+      13.6,
+      9.66,
+      16.32
+    ],
+    "probe.bank.ring71.chain[1].ro_inv": [
+      10.12,
+      13.6,
+      11.5,
+      16.32
+    ],
+    "probe.bank.ring71.chain[2].ro_inv": [
+      11.96,
+      13.6,
+      13.34,
+      16.32
+    ],
+    "probe.bank.ring71.chain[3].ro_inv": [
+      13.8,
+      13.6,
+      15.18,
+      16.32
+    ],
+    "probe.bank.ring71.chain[4].ro_inv": [
+      16.1,
+      13.6,
+      17.48,
+      16.32
+    ],
+    "probe.bank.ring71.chain[5].ro_inv": [
+      17.94,
+      13.6,
+      19.32,
+      16.32
+    ],
+    "probe.bank.ring71.chain[6].ro_inv": [
+      19.78,
+      13.6,
+      21.16,
+      16.32
+    ],
+    "probe.bank.ring71.chain[7].ro_inv": [
+      21.62,
+      13.6,
+      23.0,
+      16.32
+    ],
+    "probe.bank.ring71.chain[8].ro_inv": [
+      23.46,
+      13.6,
+      24.84,
+      16.32
+    ],
+    "probe.bank.ring71.chain[9].ro_inv": [
+      25.3,
+      13.6,
+      26.68,
+      16.32
+    ],
+    "probe.bank.ring71.chain[10].ro_inv": [
+      27.14,
+      13.6,
+      28.52,
+      16.32
+    ],
+    "probe.bank.ring71.chain[11].ro_inv": [
+      28.98,
+      13.6,
+      30.36,
+      16.32
+    ],
+    "probe.bank.ring71.chain[12].ro_inv": [
+      30.82,
+      13.6,
+      32.2,
+      16.32
+    ],
+    "probe.bank.ring71.chain[13].ro_inv": [
+      32.66,
+      13.6,
+      34.04,
+      16.32
+    ],
+    "probe.bank.ring71.chain[14].ro_inv": [
+      34.5,
+      13.6,
+      35.88,
+      16.32
+    ],
+    "probe.bank.ring71.chain[15].ro_inv": [
+      36.34,
+      13.6,
+      37.72,
+      16.32
+    ],
+    "probe.bank.ring71.chain[16].ro_inv": [
+      38.18,
+      13.6,
+      39.56,
+      16.32
+    ],
+    "probe.bank.ring71.chain[17].ro_inv": [
+      40.02,
+      13.6,
+      41.4,
+      16.32
+    ],
+    "probe.bank.ring71.chain[18].ro_inv": [
+      41.86,
+      13.6,
+      43.24,
+      16.32
+    ],
+    "probe.bank.ring71.chain[19].ro_inv": [
+      43.7,
+      13.6,
+      45.08,
+      16.32
+    ],
+    "probe.bank.ring71.chain[20].ro_inv": [
+      45.54,
+      13.6,
+      46.92,
+      16.32
+    ],
+    "probe.bank.ring71.chain[21].ro_inv": [
+      47.38,
+      13.6,
+      48.76,
+      16.32
+    ],
+    "probe.bank.ring71.chain[22].ro_inv": [
+      49.22,
+      13.6,
+      50.6,
+      16.32
+    ],
+    "probe.bank.ring71.chain[23].ro_inv": [
+      51.06,
+      13.6,
+      52.44,
+      16.32
+    ],
+    "probe.bank.ring71.chain[24].ro_inv": [
+      52.9,
+      13.6,
+      54.28,
+      16.32
+    ],
+    "probe.bank.ring71.chain[25].ro_inv": [
+      54.74,
+      13.6,
+      56.12,
+      16.32
+    ],
+    "probe.bank.ring71.chain[26].ro_inv": [
+      56.58,
+      13.6,
+      57.96,
+      16.32
+    ],
+    "probe.bank.ring71.chain[27].ro_inv": [
+      58.42,
+      13.6,
+      59.8,
+      16.32
+    ],
+    "probe.bank.ring71.chain[28].ro_inv": [
+      60.26,
+      13.6,
+      61.64,
+      16.32
+    ],
+    "probe.bank.ring71.chain[29].ro_inv": [
+      62.1,
+      13.6,
+      63.48,
+      16.32
+    ],
+    "probe.bank.ring71.chain[30].ro_inv": [
+      63.94,
+      13.6,
+      65.32,
+      16.32
+    ],
+    "probe.bank.ring71.chain[31].ro_inv": [
+      65.78,
+      13.6,
+      67.16,
+      16.32
+    ],
+    "probe.bank.ring71.chain[32].ro_inv": [
+      67.62,
+      13.6,
+      69.0,
+      16.32
+    ],
+    "probe.bank.ring71.chain[33].ro_inv": [
+      69.46,
+      13.6,
+      70.84,
+      16.32
+    ],
+    "probe.bank.ring71.chain[34].ro_inv": [
+      71.3,
+      13.6,
+      72.68,
+      16.32
+    ],
+    "probe.bank.ring71.chain[35].ro_inv": [
+      73.14,
+      13.6,
+      74.52,
+      16.32
+    ],
+    "probe.bank.ring71.chain[36].ro_inv": [
+      73.14,
+      16.32,
+      74.52,
+      19.04
+    ],
+    "probe.bank.ring71.chain[37].ro_inv": [
+      71.3,
+      16.32,
+      72.68,
+      19.04
+    ],
+    "probe.bank.ring71.chain[38].ro_inv": [
+      69.46,
+      16.32,
+      70.84,
+      19.04
+    ],
+    "probe.bank.ring71.chain[39].ro_inv": [
+      67.62,
+      16.32,
+      69.0,
+      19.04
+    ],
+    "probe.bank.ring71.chain[40].ro_inv": [
+      65.78,
+      16.32,
+      67.16,
+      19.04
+    ],
+    "probe.bank.ring71.chain[41].ro_inv": [
+      63.94,
+      16.32,
+      65.32,
+      19.04
+    ],
+    "probe.bank.ring71.chain[42].ro_inv": [
+      62.1,
+      16.32,
+      63.48,
+      19.04
+    ],
+    "probe.bank.ring71.chain[43].ro_inv": [
+      60.26,
+      16.32,
+      61.64,
+      19.04
+    ],
+    "probe.bank.ring71.chain[44].ro_inv": [
+      58.42,
+      16.32,
+      59.8,
+      19.04
+    ],
+    "probe.bank.ring71.chain[45].ro_inv": [
+      56.58,
+      16.32,
+      57.96,
+      19.04
+    ],
+    "probe.bank.ring71.chain[46].ro_inv": [
+      54.74,
+      16.32,
+      56.12,
+      19.04
+    ],
+    "probe.bank.ring71.chain[47].ro_inv": [
+      52.9,
+      16.32,
+      54.28,
+      19.04
+    ],
+    "probe.bank.ring71.chain[48].ro_inv": [
+      51.06,
+      16.32,
+      52.44,
+      19.04
+    ],
+    "probe.bank.ring71.chain[49].ro_inv": [
+      49.22,
+      16.32,
+      50.6,
+      19.04
+    ],
+    "probe.bank.ring71.chain[50].ro_inv": [
+      47.38,
+      16.32,
+      48.76,
+      19.04
+    ],
+    "probe.bank.ring71.chain[51].ro_inv": [
+      45.54,
+      16.32,
+      46.92,
+      19.04
+    ],
+    "probe.bank.ring71.chain[52].ro_inv": [
+      43.7,
+      16.32,
+      45.08,
+      19.04
+    ],
+    "probe.bank.ring71.chain[53].ro_inv": [
+      41.86,
+      16.32,
+      43.24,
+      19.04
+    ],
+    "probe.bank.ring71.chain[54].ro_inv": [
+      40.02,
+      16.32,
+      41.4,
+      19.04
+    ],
+    "probe.bank.ring71.chain[55].ro_inv": [
+      38.18,
+      16.32,
+      39.56,
+      19.04
+    ],
+    "probe.bank.ring71.chain[56].ro_inv": [
+      36.34,
+      16.32,
+      37.72,
+      19.04
+    ],
+    "probe.bank.ring71.chain[57].ro_inv": [
+      34.5,
+      16.32,
+      35.88,
+      19.04
+    ],
+    "probe.bank.ring71.chain[58].ro_inv": [
+      32.66,
+      16.32,
+      34.04,
+      19.04
+    ],
+    "probe.bank.ring71.chain[59].ro_inv": [
+      30.82,
+      16.32,
+      32.2,
+      19.04
+    ],
+    "probe.bank.ring71.chain[60].ro_inv": [
+      28.98,
+      16.32,
+      30.36,
+      19.04
+    ],
+    "probe.bank.ring71.chain[61].ro_inv": [
+      26.68,
+      16.32,
+      28.06,
+      19.04
+    ],
+    "probe.bank.ring71.chain[62].ro_inv": [
+      24.84,
+      16.32,
+      26.22,
+      19.04
+    ],
+    "probe.bank.ring71.chain[63].ro_inv": [
+      23.0,
+      16.32,
+      24.38,
+      19.04
+    ],
+    "probe.bank.ring71.chain[64].ro_inv": [
+      21.16,
+      16.32,
+      22.54,
+      19.04
+    ],
+    "probe.bank.ring71.chain[65].ro_inv": [
+      19.32,
+      16.32,
+      20.7,
+      19.04
+    ],
+    "probe.bank.ring71.chain[66].ro_inv": [
+      17.48,
+      16.32,
+      18.86,
+      19.04
+    ],
+    "probe.bank.ring71.chain[67].ro_inv": [
+      15.64,
+      16.32,
+      17.02,
+      19.04
+    ],
+    "probe.bank.ring71.chain[68].ro_inv": [
+      13.8,
+      16.32,
+      15.18,
+      19.04
+    ],
+    "probe.bank.ring71.chain[69].ro_inv": [
+      11.96,
+      16.32,
+      13.34,
+      19.04
+    ],
+    "probe.bank.ring71.chain[70].ro_inv": [
+      10.12,
+      16.32,
+      11.5,
+      19.04
+    ],
+    "probe.bank.ring71.ro_output": [
+      8.28,
+      16.32,
+      9.66,
+      19.04
+    ],
+    "probe.bank.ring95.ro_gate": [
+      8.28,
+      38.08,
+      9.66,
+      40.8
+    ],
+    "probe.bank.ring95.chain[1].ro_inv": [
+      10.12,
+      38.08,
+      11.5,
+      40.8
+    ],
+    "probe.bank.ring95.chain[2].ro_inv": [
+      11.96,
+      38.08,
+      13.34,
+      40.8
+    ],
+    "probe.bank.ring95.chain[3].ro_inv": [
+      13.8,
+      38.08,
+      15.18,
+      40.8
+    ],
+    "probe.bank.ring95.chain[4].ro_inv": [
+      15.64,
+      38.08,
+      17.02,
+      40.8
+    ],
+    "probe.bank.ring95.chain[5].ro_inv": [
+      17.48,
+      38.08,
+      18.86,
+      40.8
+    ],
+    "probe.bank.ring95.chain[6].ro_inv": [
+      19.32,
+      38.08,
+      20.7,
+      40.8
+    ],
+    "probe.bank.ring95.chain[7].ro_inv": [
+      21.16,
+      38.08,
+      22.54,
+      40.8
+    ],
+    "probe.bank.ring95.chain[8].ro_inv": [
+      23.0,
+      38.08,
+      24.38,
+      40.8
+    ],
+    "probe.bank.ring95.chain[9].ro_inv": [
+      24.84,
+      38.08,
+      26.22,
+      40.8
+    ],
+    "probe.bank.ring95.chain[10].ro_inv": [
+      26.68,
+      38.08,
+      28.06,
+      40.8
+    ],
+    "probe.bank.ring95.chain[11].ro_inv": [
+      28.98,
+      38.08,
+      30.36,
+      40.8
+    ],
+    "probe.bank.ring95.chain[12].ro_inv": [
+      30.82,
+      38.08,
+      32.2,
+      40.8
+    ],
+    "probe.bank.ring95.chain[13].ro_inv": [
+      32.66,
+      38.08,
+      34.04,
+      40.8
+    ],
+    "probe.bank.ring95.chain[14].ro_inv": [
+      34.5,
+      38.08,
+      35.88,
+      40.8
+    ],
+    "probe.bank.ring95.chain[15].ro_inv": [
+      36.34,
+      38.08,
+      37.72,
+      40.8
+    ],
+    "probe.bank.ring95.chain[16].ro_inv": [
+      38.18,
+      38.08,
+      39.56,
+      40.8
+    ],
+    "probe.bank.ring95.chain[17].ro_inv": [
+      40.02,
+      38.08,
+      41.4,
+      40.8
+    ],
+    "probe.bank.ring95.chain[18].ro_inv": [
+      41.86,
+      38.08,
+      43.24,
+      40.8
+    ],
+    "probe.bank.ring95.chain[19].ro_inv": [
+      43.7,
+      38.08,
+      45.08,
+      40.8
+    ],
+    "probe.bank.ring95.chain[20].ro_inv": [
+      45.54,
+      38.08,
+      46.92,
+      40.8
+    ],
+    "probe.bank.ring95.chain[21].ro_inv": [
+      47.38,
+      38.08,
+      48.76,
+      40.8
+    ],
+    "probe.bank.ring95.chain[22].ro_inv": [
+      49.22,
+      38.08,
+      50.6,
+      40.8
+    ],
+    "probe.bank.ring95.chain[23].ro_inv": [
+      51.06,
+      38.08,
+      52.44,
+      40.8
+    ],
+    "probe.bank.ring95.chain[24].ro_inv": [
+      52.9,
+      38.08,
+      54.28,
+      40.8
+    ],
+    "probe.bank.ring95.chain[25].ro_inv": [
+      54.74,
+      38.08,
+      56.12,
+      40.8
+    ],
+    "probe.bank.ring95.chain[26].ro_inv": [
+      56.58,
+      38.08,
+      57.96,
+      40.8
+    ],
+    "probe.bank.ring95.chain[27].ro_inv": [
+      58.42,
+      38.08,
+      59.8,
+      40.8
+    ],
+    "probe.bank.ring95.chain[28].ro_inv": [
+      60.26,
+      38.08,
+      61.64,
+      40.8
+    ],
+    "probe.bank.ring95.chain[29].ro_inv": [
+      62.1,
+      38.08,
+      63.48,
+      40.8
+    ],
+    "probe.bank.ring95.chain[30].ro_inv": [
+      63.94,
+      38.08,
+      65.32,
+      40.8
+    ],
+    "probe.bank.ring95.chain[31].ro_inv": [
+      65.78,
+      38.08,
+      67.16,
+      40.8
+    ],
+    "probe.bank.ring95.chain[32].ro_inv": [
+      67.62,
+      38.08,
+      69.0,
+      40.8
+    ],
+    "probe.bank.ring95.chain[33].ro_inv": [
+      69.46,
+      38.08,
+      70.84,
+      40.8
+    ],
+    "probe.bank.ring95.chain[34].ro_inv": [
+      71.3,
+      38.08,
+      72.68,
+      40.8
+    ],
+    "probe.bank.ring95.chain[35].ro_inv": [
+      73.14,
+      38.08,
+      74.52,
+      40.8
+    ],
+    "probe.bank.ring95.chain[36].ro_inv": [
+      74.98,
+      38.08,
+      76.36,
+      40.8
+    ],
+    "probe.bank.ring95.chain[37].ro_inv": [
+      76.82,
+      38.08,
+      78.2,
+      40.8
+    ],
+    "probe.bank.ring95.chain[38].ro_inv": [
+      78.66,
+      38.08,
+      80.04,
+      40.8
+    ],
+    "probe.bank.ring95.chain[39].ro_inv": [
+      80.5,
+      38.08,
+      81.88,
+      40.8
+    ],
+    "probe.bank.ring95.chain[40].ro_inv": [
+      82.34,
+      38.08,
+      83.72,
+      40.8
+    ],
+    "probe.bank.ring95.chain[41].ro_inv": [
+      84.18,
+      38.08,
+      85.56,
+      40.8
+    ],
+    "probe.bank.ring95.chain[42].ro_inv": [
+      86.02,
+      38.08,
+      87.4,
+      40.8
+    ],
+    "probe.bank.ring95.chain[43].ro_inv": [
+      87.86,
+      38.08,
+      89.24,
+      40.8
+    ],
+    "probe.bank.ring95.chain[44].ro_inv": [
+      89.7,
+      38.08,
+      91.08,
+      40.8
+    ],
+    "probe.bank.ring95.chain[45].ro_inv": [
+      91.54,
+      38.08,
+      92.92,
+      40.8
+    ],
+    "probe.bank.ring95.chain[46].ro_inv": [
+      93.38,
+      38.08,
+      94.76,
+      40.8
+    ],
+    "probe.bank.ring95.chain[47].ro_inv": [
+      95.22,
+      38.08,
+      96.6,
+      40.8
+    ],
+    "probe.bank.ring95.chain[48].ro_inv": [
+      95.22,
+      40.8,
+      96.6,
+      43.52
+    ],
+    "probe.bank.ring95.chain[49].ro_inv": [
+      93.38,
+      40.8,
+      94.76,
+      43.52
+    ],
+    "probe.bank.ring95.chain[50].ro_inv": [
+      91.54,
+      40.8,
+      92.92,
+      43.52
+    ],
+    "probe.bank.ring95.chain[51].ro_inv": [
+      89.7,
+      40.8,
+      91.08,
+      43.52
+    ],
+    "probe.bank.ring95.chain[52].ro_inv": [
+      87.86,
+      40.8,
+      89.24,
+      43.52
+    ],
+    "probe.bank.ring95.chain[53].ro_inv": [
+      86.02,
+      40.8,
+      87.4,
+      43.52
+    ],
+    "probe.bank.ring95.chain[54].ro_inv": [
+      84.18,
+      40.8,
+      85.56,
+      43.52
+    ],
+    "probe.bank.ring95.chain[55].ro_inv": [
+      82.34,
+      40.8,
+      83.72,
+      43.52
+    ],
+    "probe.bank.ring95.chain[56].ro_inv": [
+      80.5,
+      40.8,
+      81.88,
+      43.52
+    ],
+    "probe.bank.ring95.chain[57].ro_inv": [
+      78.66,
+      40.8,
+      80.04,
+      43.52
+    ],
+    "probe.bank.ring95.chain[58].ro_inv": [
+      76.82,
+      40.8,
+      78.2,
+      43.52
+    ],
+    "probe.bank.ring95.chain[59].ro_inv": [
+      74.98,
+      40.8,
+      76.36,
+      43.52
+    ],
+    "probe.bank.ring95.chain[60].ro_inv": [
+      73.14,
+      40.8,
+      74.52,
+      43.52
+    ],
+    "probe.bank.ring95.chain[61].ro_inv": [
+      71.3,
+      40.8,
+      72.68,
+      43.52
+    ],
+    "probe.bank.ring95.chain[62].ro_inv": [
+      69.46,
+      40.8,
+      70.84,
+      43.52
+    ],
+    "probe.bank.ring95.chain[63].ro_inv": [
+      67.62,
+      40.8,
+      69.0,
+      43.52
+    ],
+    "probe.bank.ring95.chain[64].ro_inv": [
+      65.78,
+      40.8,
+      67.16,
+      43.52
+    ],
+    "probe.bank.ring95.chain[65].ro_inv": [
+      63.94,
+      40.8,
+      65.32,
+      43.52
+    ],
+    "probe.bank.ring95.chain[66].ro_inv": [
+      62.1,
+      40.8,
+      63.48,
+      43.52
+    ],
+    "probe.bank.ring95.chain[67].ro_inv": [
+      60.26,
+      40.8,
+      61.64,
+      43.52
+    ],
+    "probe.bank.ring95.chain[68].ro_inv": [
+      58.42,
+      40.8,
+      59.8,
+      43.52
+    ],
+    "probe.bank.ring95.chain[69].ro_inv": [
+      56.58,
+      40.8,
+      57.96,
+      43.52
+    ],
+    "probe.bank.ring95.chain[70].ro_inv": [
+      54.74,
+      40.8,
+      56.12,
+      43.52
+    ],
+    "probe.bank.ring95.chain[71].ro_inv": [
+      52.9,
+      40.8,
+      54.28,
+      43.52
+    ],
+    "probe.bank.ring95.chain[72].ro_inv": [
+      51.06,
+      40.8,
+      52.44,
+      43.52
+    ],
+    "probe.bank.ring95.chain[73].ro_inv": [
+      49.22,
+      40.8,
+      50.6,
+      43.52
+    ],
+    "probe.bank.ring95.chain[74].ro_inv": [
+      47.38,
+      40.8,
+      48.76,
+      43.52
+    ],
+    "probe.bank.ring95.chain[75].ro_inv": [
+      45.54,
+      40.8,
+      46.92,
+      43.52
+    ],
+    "probe.bank.ring95.chain[76].ro_inv": [
+      43.7,
+      40.8,
+      45.08,
+      43.52
+    ],
+    "probe.bank.ring95.chain[77].ro_inv": [
+      41.86,
+      40.8,
+      43.24,
+      43.52
+    ],
+    "probe.bank.ring95.chain[78].ro_inv": [
+      40.02,
+      40.8,
+      41.4,
+      43.52
+    ],
+    "probe.bank.ring95.chain[79].ro_inv": [
+      38.18,
+      40.8,
+      39.56,
+      43.52
+    ],
+    "probe.bank.ring95.chain[80].ro_inv": [
+      36.34,
+      40.8,
+      37.72,
+      43.52
+    ],
+    "probe.bank.ring95.chain[81].ro_inv": [
+      34.5,
+      40.8,
+      35.88,
+      43.52
+    ],
+    "probe.bank.ring95.chain[82].ro_inv": [
+      32.66,
+      40.8,
+      34.04,
+      43.52
+    ],
+    "probe.bank.ring95.chain[83].ro_inv": [
+      30.82,
+      40.8,
+      32.2,
+      43.52
+    ],
+    "probe.bank.ring95.chain[84].ro_inv": [
+      28.98,
+      40.8,
+      30.36,
+      43.52
+    ],
+    "probe.bank.ring95.chain[85].ro_inv": [
+      27.14,
+      40.8,
+      28.52,
+      43.52
+    ],
+    "probe.bank.ring95.chain[86].ro_inv": [
+      25.3,
+      40.8,
+      26.68,
+      43.52
+    ],
+    "probe.bank.ring95.chain[87].ro_inv": [
+      23.46,
+      40.8,
+      24.84,
+      43.52
+    ],
+    "probe.bank.ring95.chain[88].ro_inv": [
+      21.62,
+      40.8,
+      23.0,
+      43.52
+    ],
+    "probe.bank.ring95.chain[89].ro_inv": [
+      19.78,
+      40.8,
+      21.16,
+      43.52
+    ],
+    "probe.bank.ring95.chain[90].ro_inv": [
+      17.94,
+      40.8,
+      19.32,
+      43.52
+    ],
+    "probe.bank.ring95.chain[91].ro_inv": [
+      16.1,
+      40.8,
+      17.48,
+      43.52
+    ],
+    "probe.bank.ring95.chain[92].ro_inv": [
+      13.8,
+      40.8,
+      15.18,
+      43.52
+    ],
+    "probe.bank.ring95.chain[93].ro_inv": [
+      11.96,
+      40.8,
+      13.34,
+      43.52
+    ],
+    "probe.bank.ring95.chain[94].ro_inv": [
+      10.12,
+      40.8,
+      11.5,
+      43.52
+    ],
+    "probe.bank.ring95.ro_output": [
+      8.28,
+      40.8,
+      9.66,
+      43.52
+    ],
+    "probe.bank.ring127.ro_gate": [
+      8.28,
+      62.56,
+      9.66,
+      65.28
+    ],
+    "probe.bank.ring127.chain[1].ro_inv": [
+      10.12,
+      62.56,
+      11.5,
+      65.28
+    ],
+    "probe.bank.ring127.chain[2].ro_inv": [
+      11.96,
+      62.56,
+      13.34,
+      65.28
+    ],
+    "probe.bank.ring127.chain[3].ro_inv": [
+      13.8,
+      62.56,
+      15.18,
+      65.28
+    ],
+    "probe.bank.ring127.chain[4].ro_inv": [
+      16.1,
+      62.56,
+      17.48,
+      65.28
+    ],
+    "probe.bank.ring127.chain[5].ro_inv": [
+      17.94,
+      62.56,
+      19.32,
+      65.28
+    ],
+    "probe.bank.ring127.chain[6].ro_inv": [
+      19.78,
+      62.56,
+      21.16,
+      65.28
+    ],
+    "probe.bank.ring127.chain[7].ro_inv": [
+      21.62,
+      62.56,
+      23.0,
+      65.28
+    ],
+    "probe.bank.ring127.chain[8].ro_inv": [
+      23.46,
+      62.56,
+      24.84,
+      65.28
+    ],
+    "probe.bank.ring127.chain[9].ro_inv": [
+      25.3,
+      62.56,
+      26.68,
+      65.28
+    ],
+    "probe.bank.ring127.chain[10].ro_inv": [
+      27.14,
+      62.56,
+      28.52,
+      65.28
+    ],
+    "probe.bank.ring127.chain[11].ro_inv": [
+      28.98,
+      62.56,
+      30.36,
+      65.28
+    ],
+    "probe.bank.ring127.chain[12].ro_inv": [
+      30.82,
+      62.56,
+      32.2,
+      65.28
+    ],
+    "probe.bank.ring127.chain[13].ro_inv": [
+      32.66,
+      62.56,
+      34.04,
+      65.28
+    ],
+    "probe.bank.ring127.chain[14].ro_inv": [
+      34.5,
+      62.56,
+      35.88,
+      65.28
+    ],
+    "probe.bank.ring127.chain[15].ro_inv": [
+      36.34,
+      62.56,
+      37.72,
+      65.28
+    ],
+    "probe.bank.ring127.chain[16].ro_inv": [
+      38.18,
+      62.56,
+      39.56,
+      65.28
+    ],
+    "probe.bank.ring127.chain[17].ro_inv": [
+      40.02,
+      62.56,
+      41.4,
+      65.28
+    ],
+    "probe.bank.ring127.chain[18].ro_inv": [
+      41.86,
+      62.56,
+      43.24,
+      65.28
+    ],
+    "probe.bank.ring127.chain[19].ro_inv": [
+      43.7,
+      62.56,
+      45.08,
+      65.28
+    ],
+    "probe.bank.ring127.chain[20].ro_inv": [
+      45.54,
+      62.56,
+      46.92,
+      65.28
+    ],
+    "probe.bank.ring127.chain[21].ro_inv": [
+      47.38,
+      62.56,
+      48.76,
+      65.28
+    ],
+    "probe.bank.ring127.chain[22].ro_inv": [
+      49.22,
+      62.56,
+      50.6,
+      65.28
+    ],
+    "probe.bank.ring127.chain[23].ro_inv": [
+      51.06,
+      62.56,
+      52.44,
+      65.28
+    ],
+    "probe.bank.ring127.chain[24].ro_inv": [
+      52.9,
+      62.56,
+      54.28,
+      65.28
+    ],
+    "probe.bank.ring127.chain[25].ro_inv": [
+      54.74,
+      62.56,
+      56.12,
+      65.28
+    ],
+    "probe.bank.ring127.chain[26].ro_inv": [
+      56.58,
+      62.56,
+      57.96,
+      65.28
+    ],
+    "probe.bank.ring127.chain[27].ro_inv": [
+      58.42,
+      62.56,
+      59.8,
+      65.28
+    ],
+    "probe.bank.ring127.chain[28].ro_inv": [
+      60.26,
+      62.56,
+      61.64,
+      65.28
+    ],
+    "probe.bank.ring127.chain[29].ro_inv": [
+      62.1,
+      62.56,
+      63.48,
+      65.28
+    ],
+    "probe.bank.ring127.chain[30].ro_inv": [
+      63.94,
+      62.56,
+      65.32,
+      65.28
+    ],
+    "probe.bank.ring127.chain[31].ro_inv": [
+      65.78,
+      62.56,
+      67.16,
+      65.28
+    ],
+    "probe.bank.ring127.chain[32].ro_inv": [
+      67.62,
+      62.56,
+      69.0,
+      65.28
+    ],
+    "probe.bank.ring127.chain[33].ro_inv": [
+      69.46,
+      62.56,
+      70.84,
+      65.28
+    ],
+    "probe.bank.ring127.chain[34].ro_inv": [
+      71.3,
+      62.56,
+      72.68,
+      65.28
+    ],
+    "probe.bank.ring127.chain[35].ro_inv": [
+      73.14,
+      62.56,
+      74.52,
+      65.28
+    ],
+    "probe.bank.ring127.chain[36].ro_inv": [
+      74.98,
+      62.56,
+      76.36,
+      65.28
+    ],
+    "probe.bank.ring127.chain[37].ro_inv": [
+      76.82,
+      62.56,
+      78.2,
+      65.28
+    ],
+    "probe.bank.ring127.chain[38].ro_inv": [
+      78.66,
+      62.56,
+      80.04,
+      65.28
+    ],
+    "probe.bank.ring127.chain[39].ro_inv": [
+      80.5,
+      62.56,
+      81.88,
+      65.28
+    ],
+    "probe.bank.ring127.chain[40].ro_inv": [
+      82.34,
+      62.56,
+      83.72,
+      65.28
+    ],
+    "probe.bank.ring127.chain[41].ro_inv": [
+      84.18,
+      62.56,
+      85.56,
+      65.28
+    ],
+    "probe.bank.ring127.chain[42].ro_inv": [
+      86.02,
+      62.56,
+      87.4,
+      65.28
+    ],
+    "probe.bank.ring127.chain[43].ro_inv": [
+      87.86,
+      62.56,
+      89.24,
+      65.28
+    ],
+    "probe.bank.ring127.chain[44].ro_inv": [
+      89.7,
+      62.56,
+      91.08,
+      65.28
+    ],
+    "probe.bank.ring127.chain[45].ro_inv": [
+      91.54,
+      62.56,
+      92.92,
+      65.28
+    ],
+    "probe.bank.ring127.chain[46].ro_inv": [
+      93.38,
+      62.56,
+      94.76,
+      65.28
+    ],
+    "probe.bank.ring127.chain[47].ro_inv": [
+      95.22,
+      62.56,
+      96.6,
+      65.28
+    ],
+    "probe.bank.ring127.chain[48].ro_inv": [
+      97.06,
+      62.56,
+      98.44,
+      65.28
+    ],
+    "probe.bank.ring127.chain[49].ro_inv": [
+      98.9,
+      62.56,
+      100.28,
+      65.28
+    ],
+    "probe.bank.ring127.chain[50].ro_inv": [
+      100.74,
+      62.56,
+      102.12,
+      65.28
+    ],
+    "probe.bank.ring127.chain[51].ro_inv": [
+      102.58,
+      62.56,
+      103.96,
+      65.28
+    ],
+    "probe.bank.ring127.chain[52].ro_inv": [
+      104.42,
+      62.56,
+      105.8,
+      65.28
+    ],
+    "probe.bank.ring127.chain[53].ro_inv": [
+      106.26,
+      62.56,
+      107.64,
+      65.28
+    ],
+    "probe.bank.ring127.chain[54].ro_inv": [
+      108.1,
+      62.56,
+      109.48,
+      65.28
+    ],
+    "probe.bank.ring127.chain[55].ro_inv": [
+      109.94,
+      62.56,
+      111.32,
+      65.28
+    ],
+    "probe.bank.ring127.chain[56].ro_inv": [
+      111.78,
+      62.56,
+      113.16,
+      65.28
+    ],
+    "probe.bank.ring127.chain[57].ro_inv": [
+      113.62,
+      62.56,
+      115.0,
+      65.28
+    ],
+    "probe.bank.ring127.chain[58].ro_inv": [
+      115.46,
+      62.56,
+      116.84,
+      65.28
+    ],
+    "probe.bank.ring127.chain[59].ro_inv": [
+      117.3,
+      62.56,
+      118.68,
+      65.28
+    ],
+    "probe.bank.ring127.chain[60].ro_inv": [
+      119.14,
+      62.56,
+      120.52,
+      65.28
+    ],
+    "probe.bank.ring127.chain[61].ro_inv": [
+      120.98,
+      62.56,
+      122.36,
+      65.28
+    ],
+    "probe.bank.ring127.chain[62].ro_inv": [
+      122.82,
+      62.56,
+      124.2,
+      65.28
+    ],
+    "probe.bank.ring127.chain[63].ro_inv": [
+      124.66,
+      62.56,
+      126.04,
+      65.28
+    ],
+    "probe.bank.ring127.chain[64].ro_inv": [
+      124.66,
+      65.28,
+      126.04,
+      68.0
+    ],
+    "probe.bank.ring127.chain[65].ro_inv": [
+      122.82,
+      65.28,
+      124.2,
+      68.0
+    ],
+    "probe.bank.ring127.chain[66].ro_inv": [
+      120.98,
+      65.28,
+      122.36,
+      68.0
+    ],
+    "probe.bank.ring127.chain[67].ro_inv": [
+      119.14,
+      65.28,
+      120.52,
+      68.0
+    ],
+    "probe.bank.ring127.chain[68].ro_inv": [
+      117.3,
+      65.28,
+      118.68,
+      68.0
+    ],
+    "probe.bank.ring127.chain[69].ro_inv": [
+      115.46,
+      65.28,
+      116.84,
+      68.0
+    ],
+    "probe.bank.ring127.chain[70].ro_inv": [
+      113.62,
+      65.28,
+      115.0,
+      68.0
+    ],
+    "probe.bank.ring127.chain[71].ro_inv": [
+      111.78,
+      65.28,
+      113.16,
+      68.0
+    ],
+    "probe.bank.ring127.chain[72].ro_inv": [
+      109.94,
+      65.28,
+      111.32,
+      68.0
+    ],
+    "probe.bank.ring127.chain[73].ro_inv": [
+      108.1,
+      65.28,
+      109.48,
+      68.0
+    ],
+    "probe.bank.ring127.chain[74].ro_inv": [
+      106.26,
+      65.28,
+      107.64,
+      68.0
+    ],
+    "probe.bank.ring127.chain[75].ro_inv": [
+      104.42,
+      65.28,
+      105.8,
+      68.0
+    ],
+    "probe.bank.ring127.chain[76].ro_inv": [
+      102.58,
+      65.28,
+      103.96,
+      68.0
+    ],
+    "probe.bank.ring127.chain[77].ro_inv": [
+      100.74,
+      65.28,
+      102.12,
+      68.0
+    ],
+    "probe.bank.ring127.chain[78].ro_inv": [
+      98.9,
+      65.28,
+      100.28,
+      68.0
+    ],
+    "probe.bank.ring127.chain[79].ro_inv": [
+      97.06,
+      65.28,
+      98.44,
+      68.0
+    ],
+    "probe.bank.ring127.chain[80].ro_inv": [
+      95.22,
+      65.28,
+      96.6,
+      68.0
+    ],
+    "probe.bank.ring127.chain[81].ro_inv": [
+      93.38,
+      65.28,
+      94.76,
+      68.0
+    ],
+    "probe.bank.ring127.chain[82].ro_inv": [
+      91.54,
+      65.28,
+      92.92,
+      68.0
+    ],
+    "probe.bank.ring127.chain[83].ro_inv": [
+      89.7,
+      65.28,
+      91.08,
+      68.0
+    ],
+    "probe.bank.ring127.chain[84].ro_inv": [
+      87.86,
+      65.28,
+      89.24,
+      68.0
+    ],
+    "probe.bank.ring127.chain[85].ro_inv": [
+      86.02,
+      65.28,
+      87.4,
+      68.0
+    ],
+    "probe.bank.ring127.chain[86].ro_inv": [
+      84.18,
+      65.28,
+      85.56,
+      68.0
+    ],
+    "probe.bank.ring127.chain[87].ro_inv": [
+      82.34,
+      65.28,
+      83.72,
+      68.0
+    ],
+    "probe.bank.ring127.chain[88].ro_inv": [
+      80.5,
+      65.28,
+      81.88,
+      68.0
+    ],
+    "probe.bank.ring127.chain[89].ro_inv": [
+      78.66,
+      65.28,
+      80.04,
+      68.0
+    ],
+    "probe.bank.ring127.chain[90].ro_inv": [
+      76.82,
+      65.28,
+      78.2,
+      68.0
+    ],
+    "probe.bank.ring127.chain[91].ro_inv": [
+      74.98,
+      65.28,
+      76.36,
+      68.0
+    ],
+    "probe.bank.ring127.chain[92].ro_inv": [
+      73.14,
+      65.28,
+      74.52,
+      68.0
+    ],
+    "probe.bank.ring127.chain[93].ro_inv": [
+      71.3,
+      65.28,
+      72.68,
+      68.0
+    ],
+    "probe.bank.ring127.chain[94].ro_inv": [
+      69.46,
+      65.28,
+      70.84,
+      68.0
+    ],
+    "probe.bank.ring127.chain[95].ro_inv": [
+      67.62,
+      65.28,
+      69.0,
+      68.0
+    ],
+    "probe.bank.ring127.chain[96].ro_inv": [
+      65.78,
+      65.28,
+      67.16,
+      68.0
+    ],
+    "probe.bank.ring127.chain[97].ro_inv": [
+      63.94,
+      65.28,
+      65.32,
+      68.0
+    ],
+    "probe.bank.ring127.chain[98].ro_inv": [
+      62.1,
+      65.28,
+      63.48,
+      68.0
+    ],
+    "probe.bank.ring127.chain[99].ro_inv": [
+      60.26,
+      65.28,
+      61.64,
+      68.0
+    ],
+    "probe.bank.ring127.chain[100].ro_inv": [
+      58.42,
+      65.28,
+      59.8,
+      68.0
+    ],
+    "probe.bank.ring127.chain[101].ro_inv": [
+      56.58,
+      65.28,
+      57.96,
+      68.0
+    ],
+    "probe.bank.ring127.chain[102].ro_inv": [
+      54.74,
+      65.28,
+      56.12,
+      68.0
+    ],
+    "probe.bank.ring127.chain[103].ro_inv": [
+      52.9,
+      65.28,
+      54.28,
+      68.0
+    ],
+    "probe.bank.ring127.chain[104].ro_inv": [
+      51.06,
+      65.28,
+      52.44,
+      68.0
+    ],
+    "probe.bank.ring127.chain[105].ro_inv": [
+      49.22,
+      65.28,
+      50.6,
+      68.0
+    ],
+    "probe.bank.ring127.chain[106].ro_inv": [
+      47.38,
+      65.28,
+      48.76,
+      68.0
+    ],
+    "probe.bank.ring127.chain[107].ro_inv": [
+      45.54,
+      65.28,
+      46.92,
+      68.0
+    ],
+    "probe.bank.ring127.chain[108].ro_inv": [
+      43.7,
+      65.28,
+      45.08,
+      68.0
+    ],
+    "probe.bank.ring127.chain[109].ro_inv": [
+      41.86,
+      65.28,
+      43.24,
+      68.0
+    ],
+    "probe.bank.ring127.chain[110].ro_inv": [
+      40.02,
+      65.28,
+      41.4,
+      68.0
+    ],
+    "probe.bank.ring127.chain[111].ro_inv": [
+      38.18,
+      65.28,
+      39.56,
+      68.0
+    ],
+    "probe.bank.ring127.chain[112].ro_inv": [
+      36.34,
+      65.28,
+      37.72,
+      68.0
+    ],
+    "probe.bank.ring127.chain[113].ro_inv": [
+      34.5,
+      65.28,
+      35.88,
+      68.0
+    ],
+    "probe.bank.ring127.chain[114].ro_inv": [
+      32.66,
+      65.28,
+      34.04,
+      68.0
+    ],
+    "probe.bank.ring127.chain[115].ro_inv": [
+      30.82,
+      65.28,
+      32.2,
+      68.0
+    ],
+    "probe.bank.ring127.chain[116].ro_inv": [
+      28.98,
+      65.28,
+      30.36,
+      68.0
+    ],
+    "probe.bank.ring127.chain[117].ro_inv": [
+      26.68,
+      65.28,
+      28.06,
+      68.0
+    ],
+    "probe.bank.ring127.chain[118].ro_inv": [
+      24.84,
+      65.28,
+      26.22,
+      68.0
+    ],
+    "probe.bank.ring127.chain[119].ro_inv": [
+      23.0,
+      65.28,
+      24.38,
+      68.0
+    ],
+    "probe.bank.ring127.chain[120].ro_inv": [
+      21.16,
+      65.28,
+      22.54,
+      68.0
+    ],
+    "probe.bank.ring127.chain[121].ro_inv": [
+      19.32,
+      65.28,
+      20.7,
+      68.0
+    ],
+    "probe.bank.ring127.chain[122].ro_inv": [
+      17.48,
+      65.28,
+      18.86,
+      68.0
+    ],
+    "probe.bank.ring127.chain[123].ro_inv": [
+      15.64,
+      65.28,
+      17.02,
+      68.0
+    ],
+    "probe.bank.ring127.chain[124].ro_inv": [
+      13.8,
+      65.28,
+      15.18,
+      68.0
+    ],
+    "probe.bank.ring127.chain[125].ro_inv": [
+      11.96,
+      65.28,
+      13.34,
+      68.0
+    ],
+    "probe.bank.ring127.chain[126].ro_inv": [
+      10.12,
+      65.28,
+      11.5,
+      68.0
+    ],
+    "probe.bank.ring127.ro_output": [
+      8.28,
+      65.28,
+      9.66,
+      68.0
+    ],
+    "probe.divider.stage[0].ff": [
+      10.12,
+      87.04,
+      19.32,
+      89.76
+    ],
+    "probe.divider.stage[1].ff": [
+      6.44,
+      73.44,
+      15.64,
+      76.16
+    ],
+    "probe.divider.stage[2].ff": [
+      19.32,
+      76.16,
+      28.52,
+      78.88
+    ],
+    "probe.divider.stage[3].ff": [
+      19.32,
+      81.6,
+      28.52,
+      84.32
+    ],
+    "probe.divider.stage[4].ff": [
+      22.54,
+      89.76,
+      31.74,
+      92.48
+    ],
+    "probe.divider.stage[5].ff": [
+      19.32,
+      87.04,
+      28.52,
+      89.76
+    ],
+    "probe.divider.stage[6].ff": [
+      28.98,
+      92.48,
+      38.18,
+      95.2
+    ],
+    "probe.divider.stage[7].ff": [
+      19.32,
+      106.08,
+      28.52,
+      108.8
+    ],
+    "probe.divider.stage[8].ff": [
+      32.2,
+      84.32,
+      41.4,
+      87.04
+    ],
+    "probe.divider.stage[9].ff": [
+      35.88,
+      97.92,
+      45.08,
+      100.64
+    ],
+    "_592_": [
+      48.76,
+      89.76,
+      56.58,
+      92.48
+    ],
+    "_593_": [
+      54.74,
+      87.04,
+      62.56,
+      89.76
+    ]
+  },
+  "feedback_preserved": true,
+  "divider_preserved": true,
+  "direct_two_flop_chain_preserved": true,
+  "first_stage_fanout": 1,
+  "tile_um": [
+    161,
+    111.52
+  ],
+  "setup_slack_ns": 0.49574323826974404,
+  "hold_slack_ns": 0.20424067182261654,
+  "gds_sha256": "90a2db31e5de3ac458acb6232422c9ca1698dba48ec9802672c890a0eb59f8da",
+  "checks": {
+    "design__lint_error__count": 0,
+    "design__inferred_latch__count": 0,
+    "design__instance_unmapped__count": 0,
+    "synthesis__check_error__count": 0,
+    "design__critical_disconnected_pin__count": 0,
+    "design__max_slew_violation__count": 0,
+    "design__max_cap_violation__count": 0,
+    "design__max_fanout_violation__count": 0,
+    "route__drc_errors": 0,
+    "route__antenna_violation__count": 0,
+    "magic__drc_error__count": 0,
+    "klayout__drc_error__count": 0,
+    "magic__illegal_overlap__count": 0,
+    "design__lvs_error__count": 0
+  },
+  "reviewed_unused_inputs": [
+    "uio_in[0]",
+    "uio_in[1]",
+    "uio_in[2]",
+    "uio_in[3]",
+    "uio_in[7]"
+  ],
+  "supply_omission_warnings": 20,
+  "limits": [
+    "No fabricated entropy or oscillator frequency guarantee.",
+    "Timing clocks are explicit assumptions; compare with SPICE and hardware."
+  ],
+  "digital_checks": {
+    "wrapper": "PASS",
+    "mapped_monitor": "PASS",
+    "whole_routed_netlist_functional": "PASS",
+    "capture_decoder": "PASS",
+    "firmware_adapter": "PASS",
+    "local_submission_precheck_cases": 15
+  },
+  "analog_model_checks": {
+    "loaded_cases": 81,
+    "unloaded_fast_cases": 9,
+    "loaded_range_MHz": [
+      27.0,
+      167.1
+    ],
+    "unloaded_max_MHz": 390.874,
+    "timing_clock_ceiling_MHz": 500,
+    "extracted_RC": false,
+    "entropy_validated": false
+  },
+  "timing_endpoint_review": "PASS; same extracted layout with register-only async endpoints."
+}

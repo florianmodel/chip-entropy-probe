@@ -1,0 +1,77 @@
+name: gds
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+permissions:
+  contents: read
+concurrency:
+  group: chip-gds-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 35
+    env:
+      CHIP_DOCKER_CONTEXT: default
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - name: Prepare host renderer
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install Pillow==12.3.0
+          echo "$GITHUB_WORKSPACE/.venv/bin" >> "$GITHUB_PATH"
+      - name: Install pinned container and PDK
+        run: python3 scripts/chip.py prepare
+      - name: Verify RTL and mapped monitor
+        run: |
+          python3 scripts/chip.py tt-rtl
+          python3 scripts/chip.py tool bash /work/scripts/verify-resilient.sh
+      - name: Rebuild with compact oscillator placement
+        run: python3 scripts/chip.py tt
+      - name: Verify routed netlist and capture decoding
+        run: |
+          python3 scripts/chip.py tool bash /work/scripts/verify-physical.sh
+          python3 scripts/test-firmware.py
+          python3 scripts/test-capture.py
+      - name: Export the uniquely named tile
+        run: python3 scripts/package-submission.py
+      - name: Save fresh build and evidence
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: verified-build
+          retention-days: 7
+          path: |
+            submission/
+            docs/*.png
+            build/tt-verification.json
+            build/tt-rtl/*.log
+            build/resilient-rtl/*.log
+            build/iterations/*/*.png
+  gds:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/download-artifact@v7
+        with:
+          name: verified-build
+      - name: Official custom-GDS submission package
+        uses: TinyTapeout/tt-gds-action/custom_gds@196c38e77f4d320f3b6d460e3f1068bb297e4580
+        with:
+          pdk: sky130A
+          top_module: tt_um_florianmodel_entropy_probe
+          gds_path: submission/gds/tt_um_florianmodel_entropy_probe.gds
+          lef_path: submission/lef/tt_um_florianmodel_entropy_probe.lef
+          verilog_path: submission/netlist/tt_um_florianmodel_entropy_probe.v
+          tools-ref: 01d5d2814fa9dd61e9d211e0b235a4a592a9316a
+  precheck:
+    needs: gds
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Official shuttle precheck
+        uses: TinyTapeout/tt-gds-action/precheck@196c38e77f4d320f3b6d460e3f1068bb297e4580
+        with:
+          tools-ref: 01d5d2814fa9dd61e9d211e0b235a4a592a9316a

@@ -169,3 +169,42 @@ command was enhanced to automatically render/archive every completed physical
 build and return failure when signoff metrics fail; no physical design changed.
 Automatic snapshots include failed signoff status and never overwrite prior ones.
 Architecture renderer now supports macOS Arial and Linux DejaVu Sans fonts.
+
+## Hosted submission preparation — 2026-10-05
+
+Created private repository https://github.com/florianmodel/chip-entropy-probe
+under the existing signed-in GitHub account. Root Apache-2.0 license preserves
+the upstream template license. Provisional author is florianmodel. Unique
+submitted top is tt_um_florianmodel_entropy_probe; canonical internal build top
+remains tt_um_entropy_probe. package-submission.py exports GDS/LEF/powered
+netlist, root source copies/info.yaml and SHA manifests. export-layout.py proves
+the top-cell rename preserves every geometry/hierarchy element.
+
+Initial committed design revision: aaa7e7e813dd9bc09d255d821831e47f86648dd8.
+Hosted GDS workflow: https://github.com/florianmodel/chip-entropy-probe/actions/runs/37302707223
+Hosted docs workflow: https://github.com/florianmodel/chip-entropy-probe/actions/runs/37302707126
+Docs passed; generated three-page official PDF rendered and visually inspected.
+Hosted ARM64 build passed RTL/mapped/routed tests, capture tests and full physical
+signoff using compact placement. Official custom-GDS packaging passed. All 15 official
+hosted shuttle prechecks passed; the overall GDS workflow is successful. The official precheck uses its standard PDK
+0536d02d875c8f67dd7cca3902ac457e62f20005; hardening remains pinned to 8afc8346.
+
+Hosted layout geometry/hierarchy fingerprint equals local iteration 003:
+e0dfdac4a490ba38e47af64030ee95bca129f9d5b274b43d6bd5ae67908c1561.
+Cell positions, check counts and timing margins also match. Binary GDS hashes
+differ; do not claim file-level identity. Archived hosted package, report and
+six newly generated PNGs as build/iterations/004-hosted-rebuild. PDF is at
+build/hosted-ci/docs/datasheet.pdf. Existing iteration archives remain immutable.
+
+Current calculator observed regular SKY130 one tile + one board + economy
+shipping €385; final tax/checkout total remains unverified. TTSKY26d currently
+closes 2026-11-30, estimated shipping 2027-06-09. No order or Tiny Tapeout portal
+submission has been performed. Human actions: author/publication decision,
+Tiny Tapeout GitHub login/project creation, exact successful fabrication revision
+selection, compatible board choice and final checkout under €500. Shipping
+address is collected later according to Tiny Tapeout's FAQ. Hardware bring-up
+and entropy characterization require delivered silicon; no board validation yet.
+
+Checklist-only README/CONTEXT updates follow the verified source revision and
+skip redundant CI. Submit revision aaa7e7e813dd9bc09d255d821831e47f86648dd8,
+which has both successful workflows. No RTL, constraints or package changed.

@@ -450,14 +450,57 @@ least three rising edges after 50 ns (some retained runs observe longer). These 
 extracted-layout RC or stochastic entropy validation. Model startup success does
 not guarantee manufacturing yield or useful noise.
 
-## Next step
+## Submission package and your remaining steps
 
-Validate the finite PIO/DMA collector on the actual devkit. Long gap-free
-acquisition and justified online health tests still require implementation and
-characterization; the chip remains an experimental measurement source. Complete
-submission metadata and hosted shuttle CI before considering an order.
-Fabricated-silicon measurements are needed to assess entropy; simulated
-randomness cannot establish it. Final checkout price remains to be confirmed.
+The private repository is [florianmodel/chip-entropy-probe](https://github.com/florianmodel/chip-entropy-probe).
+The submitted top is `tt_um_florianmodel_entropy_probe`; `florianmodel` is the
+provisional author handle. Canonical development sources remain under
+`examples/resilient-probe/` and `tinytapeout/`. `scripts/package-submission.py`
+exports the checked layout, LEF and powered netlist, creates root `src/` and
+`info.yaml`, and records source/artifact hashes in `submission/manifest.json`.
+Only the GDS top-cell name changes; a geometry/hierarchy fingerprint verifies
+that exporting preserves the physical design.
+
+Hosted `gds` first rebuilds with the pinned container, PDK and compact-ring
+placement, then verifies RTL, mapped logic, routed logic and capture decoding.
+It runs Tiny Tapeout's pinned custom-GDS packaging and independent shuttle
+precheck. `docs` generates the official PDF. The initial build revision is
+`aaa7e7e813dd9bc09d255d821831e47f86648dd8`.
+
+- [GDS build, packaging and precheck](https://github.com/florianmodel/chip-entropy-probe/actions/runs/37302707223)
+- [Official datasheet generation](https://github.com/florianmodel/chip-entropy-probe/actions/runs/37302707126)
+
+The hosted rebuild passed physical signoff and routed functional tests. Its
+geometry/hierarchy fingerprint, placement and timing margins match local
+iteration 003. Six fresh PNGs and the submission package are archived locally in
+`build/iterations/004-hosted-rebuild/`; the generated three-page PDF is in
+`build/hosted-ci/docs/datasheet.pdf`. All 15 official hosted shuttle prechecks passed; both GDS and Docs workflows
+are green. Submit the verified design revision above; later checklist-only
+commits do not replace that fabrication candidate.
+
+Your remaining actions are:
+
+1. Confirm the author handle and whether you want to publish this private
+   repository. If the portal requires public access, authorize publication before
+   changing visibility. Author/top-module changes require repackaging and checks.
+2. Sign in to [Tiny Tapeout](https://app.tinytapeout.com/projects/create) using
+   GitHub and create the project from the repository URL. Select the SKY130
+   shuttle and one digital tile; the current candidate is TTSKY26d. Review the
+   exact revision with successful GDS and Docs workflows before submission.
+   Creating a project alone does not submit its fabrication revision.
+3. Review a compatible development kit and the final checkout amount, including
+   applicable taxes and shipping. Keep the entire project under €500. The
+   regular calculator estimate is €385; individual pricing may be lower if
+   available. No order has been placed. Avoid extra measurement purchases until
+   the supplied board's capture is evaluated.
+4. When the board arrives, connect it and run the documented deterministic
+   bring-up tests with assistance. Validate clock/data phase and finite PIO/DMA
+   capture on hardware before collecting oscillator data.
+
+The source is still an experimental measurement chip. Model/physical/functional
+checks improve confidence in the design but cannot guarantee manufacturing
+yield or cryptographic entropy. Long gap-free acquisition, justified health
+tests, noise modeling and entropy assessment remain later characterization work.
 
 ## References
 

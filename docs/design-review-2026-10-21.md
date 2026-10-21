@@ -428,3 +428,15 @@ file. Final local regression checks passed: 9 routed-model tests, 18 evidence
 tests, 8 firmware tests, 3 capture-decoder tests, 4 timing-parser tests and the
 disconnected-pin negative checks. No hosted workflow, board test, fabrication
 order or new fabrication revision selection occurred.
+
+## Hosted release retry — 2026-10-21
+
+The first fresh hosted GDS run for commit `6a74e807c13fa4ea85b88d382285ff5457b4939e`
+passed the 90-case schematic sweep and physical signoff/ODB inspection, then
+failed in snapshot creation: the snapshot reader still accessed the obsolete
+loaded-SPICE `cases` key. `snapshot-iteration.py` now reads `loaded_cases`, keeps
+unloaded reports separate, skips invalid/missing ring coverage, and hashes copied
+reports. Three regression tests cover the current schema and negative inputs.
+Cheap regression checks now run before the hosted expensive simulations.
+This fixes archive/tooling behavior; it does not change RTL or layout. A fresh
+passing revision is still required before submission.

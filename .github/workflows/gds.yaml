@@ -26,7 +26,6 @@ jobs:
           python3 scripts/test-evidence.py
           python3 scripts/test-snapshot-iteration.py
           python3 scripts/test-firmware.py
-          python3 scripts/test-capture.py
           python3 scripts/test_inspect_tt_disconnected.py
           python3 scripts/test_timing_review.py
           python3 scripts/test-routed-spice.py
@@ -47,6 +46,7 @@ jobs:
       - name: Verify routed netlist and capture decoding
         run: |
           python3 scripts/chip.py tool bash /work/scripts/verify-physical.sh
+          python3 scripts/test-capture.py
           python3 scripts/timing-review.py
       - name: Export the uniquely named tile
         run: python3 scripts/package-submission.py

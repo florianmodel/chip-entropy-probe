@@ -75,11 +75,17 @@ def gates():
 
 
 def check():
+    """Run the legacy counter-design evidence checker, not current-chip signoff."""
     execute([sys.executable, ROOT / "scripts/check-results.py"])
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        epilog=("Scope note: 'check' (and the check step in 'verify') validates "
+                "the historical counter-design build outputs only. Use 'tt-rtl' "
+                "or 'tt' for the current entropy-probe Tiny Tapeout flow."),
+    )
     parser.add_argument("command", choices=["start", "stop", "prepare", "versions", "rtl", "gds", "oscillator", "probe", "probe-rtl", "tt", "tt-rtl", "gates", "check", "verify", "tool"])
     parser.add_argument("args", nargs=argparse.REMAINDER)
     options = parser.parse_args()

@@ -1882,7 +1882,8 @@
     "magic__drc_error__count": 0,
     "klayout__drc_error__count": 0,
     "magic__illegal_overlap__count": 0,
-    "design__lvs_error__count": 0
+    "design__lvs_error__count": 0,
+    "design__disconnected_pin__count": 5
   },
   "reviewed_unused_inputs": [
     "uio_in[0]",
@@ -1895,26 +1896,5 @@
   "limits": [
     "No fabricated entropy or oscillator frequency guarantee.",
     "Timing clocks are explicit assumptions; compare with SPICE and hardware."
-  ],
-  "digital_checks": {
-    "wrapper": "PASS",
-    "mapped_monitor": "PASS",
-    "whole_routed_netlist_functional": "PASS",
-    "capture_decoder": "PASS",
-    "firmware_adapter": "PASS",
-    "local_submission_precheck_cases": 15
-  },
-  "analog_model_checks": {
-    "loaded_cases": 81,
-    "unloaded_fast_cases": 9,
-    "loaded_range_MHz": [
-      27.0,
-      167.1
-    ],
-    "unloaded_max_MHz": 390.874,
-    "timing_clock_ceiling_MHz": 500,
-    "extracted_RC": false,
-    "entropy_validated": false
-  },
-  "timing_endpoint_review": "PASS; same extracted layout with register-only async endpoints."
+  ]
 }

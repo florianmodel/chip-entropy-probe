@@ -44,6 +44,8 @@ python3 scripts/chip.py rtl
 python3 scripts/chip.py gds
 python3 scripts/chip.py gates
 python3 scripts/chip.py check
+python3 scripts/chip.py tt-rtl  # Current entropy-probe RTL and deterministic tests
+python3 scripts/chip.py tt      # Current entropy-probe physical flow and checks
 python3 scripts/chip.py tool yosys -V
 python3 scripts/chip.py tool openroad -version
 
@@ -63,7 +65,10 @@ increment, wraparound, hold and restart in simulation. The pipeline also lints a
 synthesizes it, then runs the LibreLane Classic flow through physical checks.
 The same testbench also checks the final gate-level netlist with the SKY130 cell
 models (functional simulation, without SDF timing annotation). The `check`
-command verifies required metrics and logs and fails if evidence is missing.
+command verifies required metrics and logs for this historical counter design
+and fails if evidence is missing. It is not the current entropy-probe check or
+fabrication signoff. `verify` also includes this legacy counter check; use
+`tt-rtl` for current probe RTL/test-mode checks or `tt` for its physical flow.
 
 - Tool versions: `build/tool-versions.txt`
 - RTL simulation: `build/rtl/test.log`
@@ -244,7 +249,10 @@ signature. The integrated revision uses `examples/resilient-probe/`: selectable 
 127-stage physical rings, one enabled at a time, a /1024 frequency output, and
 zero/one/alternating/external-input test modes. A configuration change immediately
 invalidates samples, aborts the partial window and restarts the two-edge warm-up.
-Completed reports retain source/test configuration. This is interface **version 2**;
+Completed reports retain source/test configuration. The firmware helper pauses
+acquisition and clocks the old and new requests separately during configuration;
+direct source changes while enabled are not a qualified operating protocol.
+This is interface **version 2**;
 the earlier standalone monitor's version-1 table above remains historical.
 Register 3 now contains the ninth ones-count bit at bit 0, test mode at bits 2:1,
 and source at bits 4:3. Source 0/1/2 selects the three ring lengths; source 3
@@ -323,35 +331,15 @@ Evidence and inspection views:
 Use the appropriate Tiny Tapeout devkit for the purchased shuttle and its SDK.
 The source-inspected SDK revision is pinned in the lock. Copy
 `firmware/entropy_probe.py` to the board filesystem as `entropy_probe.py` after
-silicon arrives. No board is currently attached, so this adapter has host tests
-but has not been validated on real hardware. In the board REPL:
+silicon arrives. No board is currently attached, so the adapter has host tests
+only; it has not been validated on real hardware. The staged, runnable procedure
+for version/register reads, deterministic modes, PIO/DMA capture, abort and
+cleanup is in [`firmware/BRINGUP.md`](firmware/BRINGUP.md).
 
-```python
-from ttboard.demoboard import DemoBoard
-from ttboard.mode import RPMode
-from entropy_probe import EntropyProbe
-
-tt = DemoBoard.get()
-tt.mode = RPMode.ASIC_RP_CONTROL
-# Available only after this design is fabricated and included in the SDK index:
-tt.shuttle.tt_um_entropy_probe.enable()
-p = EntropyProbe(tt)
-p.reset()
-assert p.read(7) == 1
-p.enable()
-samples = p.capture_stepwise(256)
-report = p.report()
-print(report)
-```
-
-The helper stops automatic clocking, disables SDK manual-button clock monitoring,
-establishes a low clock level, and configures the MCU's bidirectional pins as
-inputs. Capture reads sample/validity before generating each rising edge, keeping
-the stream aligned with the monitor's consumed samples. Samples are returned as
-one byte per bit, with values 0 or 1, in blocks up to 4096. No-valid capture times
-out rather than hanging. A report read clocks an extra edge; do not interleave
-it with a stream that must contain every consecutive sample. These slow,
-irregular software-generated edges are for bring-up, not fixed-rate assessment.
+If the ASIC is fabricated and its submitted project is included in that shuttle's
+SDK index, the SDK project name is `tt_um_florianmodel_entropy_probe` (interface
+version 2). The entry may not exist before those conditions are met. Hardware
+validation remains open until board observations are recorded.
 
 ### Characterization plan
 
@@ -475,8 +463,10 @@ geometry/hierarchy fingerprint, placement and timing margins match local
 iteration 003. Six fresh PNGs and the submission package are archived locally in
 `build/iterations/004-hosted-rebuild/`; the generated three-page PDF is in
 `build/hosted-ci/docs/datasheet.pdf`. All 15 official hosted shuttle prechecks passed; both GDS and Docs workflows
-are green. Submit the verified design revision above; later checklist-only
-commits do not replace that fabrication candidate.
+are green for that historical baseline. The 2026-10-21 review repairs require
+a fresh passing release revision; do not select the old revision merely because
+its workflows passed. Use the exact revision recorded by the final release
+verification, rather than a later checklist-only commit.
 
 Your remaining actions are:
 
@@ -503,6 +493,14 @@ yield or cryptographic entropy. Long gap-free acquisition, justified health
 tests, noise modeling and entropy assessment remain later characterization work.
 
 ## References
+
+The additional review repairs and routed transistor/RC experiment are documented
+in [`docs/routed-verification.md`](docs/routed-verification.md). The independent
+nine-corner timing command is `python3 scripts/timing-review.py`; the complete
+partitioned clock/divider matrix is `python3 scripts/verify-routed-spice.py`.
+Packaging labels unavailable or stale optional reports as unverified instead of
+retaining an older committed PASS report. These local repairs do not select a
+new fabrication revision or imply a fresh hosted CI run.
 
 - [LibreLane source and licence](https://github.com/librelane/librelane)
 - [Tiny Tapeout local hardening](https://tinytapeout.com/guides/local-hardening/)

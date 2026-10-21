@@ -1,0 +1,33 @@
+{
+  "physical": {
+    "status": "generated_current_build",
+    "source": "build/tt-verification.json"
+  },
+  "optional": {
+    "timing-review.json": {
+      "status": "available",
+      "source": "build/timing-review-verification.json",
+      "reason": "fresh PASS report with complete nine-corner timing coverage"
+    },
+    "spice.json": {
+      "status": "available",
+      "source": "build/spice/results.json",
+      "reason": "fresh PASS report with complete corner coverage"
+    },
+    "spice-unloaded.json": {
+      "status": "available",
+      "source": "build/spice/unloaded-results.json",
+      "reason": "fresh PASS report with complete corner coverage"
+    },
+    "routed-spice.json": {
+      "status": "absent_unverified",
+      "source": "build/routed-spice/matrix.json",
+      "reason": "routed matrix is missing, incomplete or failed: FAIL_OR_INCOMPLETE; Partition failed: source-nom-tt-0-1.8-25-50-switch-en5; see .runner.log"
+    },
+    "clocked-switch.json": {
+      "status": "available_safe_switch_protocol",
+      "source": "build/routed-spice/clocked-switch-matrix.json",
+      "sha256": "a3a42b508d5c758df221024197c5de0fd634dcc5251b3c8fb8af9efca414322f"
+    }
+  }
+}

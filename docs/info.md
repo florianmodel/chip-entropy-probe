@@ -8,7 +8,12 @@ on the project clock. Two acquisition edges fill the pipeline; the third edge
 counts the first sample. Each nonoverlapping window counts 256 samples and the
 255 transitions within that window. Reports can be frozen while sampling continues.
 Changing source or test configuration discards the partial window and restarts
-warm-up. Completed reports retain the configuration that produced them.
+warm-up. Completed reports retain the configuration that produced them. For
+characterization, disable acquisition, hold the old request for at least two
+20 ns clock periods, apply and clock the new request, wait at least two more
+periods after capture, then re-enable. The firmware helper enforces separate
+manual-clock phases with three cycles before and after the request. Arbitrary
+enabled source changes are not a qualified operating protocol.
 
 Source selection UI7:UI6 = 0/1/2 chooses the three rings; 3 selects a test mode.
 Test selection UIO5:UIO4 = 0/1/2/3 chooses zero/one/alternating/external UIO6.
@@ -45,8 +50,9 @@ Stop automatic clocking, hold the clock low and keep MCU UIO0..3 as inputs.
 Assert active-low reset for at least one project-clock rising edge, then release.
 Keep controls stable across clock edges. Begin with a 100 kHz project clock.
 
-1. Read address 7 and expect 2. Enable UI3. Select source 3 and test mode 0,
-   clock once to apply configuration, then clock 258 more edges. Expect one
+1. Read address 7 and expect 2. Keep UI3 low. Select source 3 and test mode 0,
+   clock three times to apply/settle configuration, then enable UI3 and clock
+   258 more edges. Expect one
    completed window: generation 1, ones 0, transitions 0, report source 3/mode 0.
 2. After reset, test mode 1 must report 256 ones and zero transitions. Mode 2
    must report 128 ones and 255 transitions. For mode 3, drive UIO6 with a known
@@ -54,7 +60,8 @@ Keep controls stable across clock edges. Begin with a 100 kHz project clock.
 3. Assert UI4, clock once, and check that generation/counts stay unchanged over
    at least 600 more edges. Clear UI4 and verify reporting resumes. Disable UI3:
    validity clears, partial acquisition is discarded and completed reports remain.
-4. Select physical sources 0, 1 and 2 separately. Enable UI5 and measure UIO3;
+4. Select physical sources 0, 1 and 2 separately using the disabled protocol
+   above (or the guarded firmware helper). Enable UI5 and measure UIO3;
    multiply its stable frequency by 1024. Record supply, temperature and source.
    Changing modes may make startup pulses irregular; measure only after settling.
 5. Copy the repository firmware helpers to the board. Validate finite PIO/DMA

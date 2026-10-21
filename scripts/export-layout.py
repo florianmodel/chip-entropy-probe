@@ -16,7 +16,14 @@ def signature(db):
   for inst in cell.each_inst():rows.append(f'{name}|instance|{db.cell(inst.cell_index).name}|{inst.cplx_trans.to_s()}|{inst.a.to_s()}|{inst.b.to_s()}|{inst.na}|{inst.nb}')
  return hashlib.sha256('\n'.join(sorted(rows)).encode()).hexdigest()
 before=signature(layout);layout.cell(old).name=new
-(out/'gds').mkdir(parents=True,exist_ok=True);layout.write(str(out/f'gds/{new}.gds'))
+(out/'gds').mkdir(parents=True,exist_ok=True)
+target=out/f'gds/{new}.gds'
+# GDS writes carry timestamps. Preserve an equivalent export byte-for-byte.
+reuse=False
+if target.exists():
+ existing=k.Layout();existing.read(str(target))
+ reuse=([c.name for c in existing.top_cells()]==[new] and signature(existing)==before)
+if not reuse:layout.write(str(target))
 roundtrip=k.Layout();roundtrip.read(str(out/f'gds/{new}.gds'));assert signature(roundtrip)==before
 (out/'evidence').mkdir(parents=True,exist_ok=True)
 (out/'evidence/geometry.json').write_text(json.dumps({'status':'PASS','old_top':old,'new_top':new,'geometry_hierarchy_sha256':before,'top_only_rename':True,'cell_count':layout.cells()},indent=2)+'\n')

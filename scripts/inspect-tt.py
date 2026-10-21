@@ -3,6 +3,15 @@ import hashlib,json,os,re
 from pathlib import Path
 import odb
 root=Path('/work');run=root/'build/tinytapeout/src/runs/verified';design='tt_um_entropy_probe'
+
+def disconnected_pin_failures(metric_count, unused_inputs):
+ expected={f'uio_in[{j}]' for j in (0,1,2,3,7)}
+ failures={}
+ if set(unused_inputs)!=expected:failures['reviewed_unused_inputs']=sorted(unused_inputs)
+ if metric_count!=len(expected):failures['design__disconnected_pin__count']=metric_count
+ if metric_count!=len(unused_inputs):failures['disconnected_pin_count_vs_odb_inputs']={'metric':metric_count,'odb_inputs':len(unused_inputs)}
+ return failures
+
 m=json.loads((run/f'06-yosys-synthesis/{design}.nl.v.json').read_text())['modules'][design]
 db=odb.dbDatabase.create();odb.read_db(db,str(run/f'final/odb/{design}.odb'));block=db.getChip().getBlock();scale=block.getDbUnitsPerMicron();positions={}
 def cell(name,kind):
@@ -63,11 +72,11 @@ failures={k:metrics.get(k) for k in keys if metrics.get(k)!=0}
 for k,v in metrics.items():
  if k.startswith(('timing__setup__ws','timing__hold__ws')) and (not isinstance(v,(float,int)) or v<0):failures[k]=v
 unused={p.getName() for p in block.getBTerms() if p.getIoType()=='INPUT' and p.getNet() and not p.getNet().getITerms()}
-assert unused=={f'uio_in[{j}]' for j in (0,1,2,3,7)},unused
+failures.update(disconnected_pin_failures(metrics.get('design__disconnected_pin__count'),unused))
 lint=(run/'01-verilator-lint/verilator-lint.log').read_text();warnings=re.findall(r'%Warning-([^:]+):[^\n]+',lint)
 assert len(warnings)==20 and set(warnings)=={'PINMISSING'},(len(warnings),set(warnings))
 assert all(p in {'VPWR','VGND','VPB','VNB'} for p in re.findall(r"missing pin: '([^']+)'",lint))
 gds=run/f'final/gds/{design}.gds'
-report=dict(status='FAIL' if failures else 'PASS',failures=failures,design=design,ring_lengths=lengths,positions_um=positions,feedback_preserved=True,divider_preserved=True,direct_two_flop_chain_preserved=True,first_stage_fanout=1,tile_um=[161,111.52],setup_slack_ns=metrics['timing__setup__ws'],hold_slack_ns=metrics['timing__hold__ws'],gds_sha256=hashlib.sha256(gds.read_bytes()).hexdigest(),checks={k:metrics.get(k) for k in keys},reviewed_unused_inputs=sorted(unused),supply_omission_warnings=len(warnings),limits=['No fabricated entropy or oscillator frequency guarantee.','Timing clocks are explicit assumptions; compare with SPICE and hardware.'])
+report=dict(status='FAIL' if failures else 'PASS',failures=failures,design=design,ring_lengths=lengths,positions_um=positions,feedback_preserved=True,divider_preserved=True,direct_two_flop_chain_preserved=True,first_stage_fanout=1,tile_um=[161,111.52],setup_slack_ns=metrics['timing__setup__ws'],hold_slack_ns=metrics['timing__hold__ws'],gds_sha256=hashlib.sha256(gds.read_bytes()).hexdigest(),checks={**{k:metrics.get(k) for k in keys},'design__disconnected_pin__count':metrics.get('design__disconnected_pin__count')},reviewed_unused_inputs=sorted(unused),supply_omission_warnings=len(warnings),limits=['No fabricated entropy or oscillator frequency guarantee.','Timing clocks are explicit assumptions; compare with SPICE and hardware.'])
 (root/'build/tt-verification.json').write_text(json.dumps(report,indent=2)+'\n');print(report['status'],report['failures'])
 if failures and os.environ.get('CHIP_ARCHIVE')!='1':raise SystemExit(1)

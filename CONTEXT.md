@@ -208,3 +208,81 @@ and entropy characterization require delivered silicon; no board validation yet.
 Checklist-only README/CONTEXT updates follow the verified source revision and
 skip redundant CI. Submit revision aaa7e7e813dd9bc09d255d821831e47f86648dd8,
 which has both successful workflows. No RTL, constraints or package changed.
+
+
+## Review implementation — 2026-10-21
+
+See `docs/design-review-2026-10-21.md` for the original findings and dated
+implementation follow-up. Current working-tree repairs change SDC, tooling,
+evidence and documentation; the historical statement above about unchanged
+constraints/package applies only to the earlier checklist update. RTL and GDS
+geometry are unchanged. No new fabrication revision has been selected.
+
+Evidence packaging now removes stale managed optional reports and validates
+analysis inputs/models/tools. Fresh schematic SPICE: 81 loaded plus nine
+unloaded cases passed; unloaded maximum 390.874 MHz. The tracked timing
+generator passed nine Liberty/SPEF combinations after the precise first-sampler
+exception repair, retaining all divider feedback and downstream sampler paths:
+minimum setup 0.495743 ns and hold 0.204241 ns. The disconnected-pin checker
+requires exactly the five expected unused inputs. See `firmware/BRINGUP.md` for
+interface-v2/submitted-top bring-up and outstanding physical PIO/DMA checks.
+
+Routed transistor/RC partition verification is documented in
+`docs/routed-verification.md`; only a complete `PASS_SCOPED_PARTITION_MODEL` in
+`build/routed-spice/matrix.json` is completed coverage. It uses measured waveform
+replay and explicit boundary assumptions, not whole-chip simultaneous transistor
+simulation or entropy proof. The updated hosted workflow has not been dispatched.
+Delivered-silicon operation and entropy quality remain unvalidated.
+
+The attempted routed matrix ended `FAIL_OR_INCOMPLETE`: nine steady conditions
+and nominal restart passed, but the default 1 ns cut-configuration switch case
+produced a sustained ring95 phase near 585.078 MHz with 0.276070 ns low pulses.
+See the dated review follow-up and preserved first-failure traces. This is an
+adverse boundary-model result requiring clocked configuration-register follow-up,
+not a confirmed silicon defect. Do not promote it to routed PASS evidence.
+
+The failed switch experiment was reproduced with byte-identical deck/waveform.
+A separate 50 ns configuration-response case passed at 261.620/195.201/146.600
+MHz, establishing modeled transition-timing sensitivity. It does not supersede
+the failed default case; actual clocked configuration-path validation is next.
+
+
+### Clocked-control follow-up and host protocol
+
+The user authorized investigation and necessary fixes after the switching-model
+failure. `routed-spice.py --control-model clocked` now retains the four mapped
+configuration registers, their input/reset logic and routed host clock tree.
+Two nominal live-switch alignments (1 ns and 10 ns before the host edge) passed
+without reproducing the ideal-cut 585 MHz phase. This does not qualify arbitrary
+live source changes. `EntropyProbe.configure()` now pauses an enabled request,
+clocks three cycles with old controls, applies/clocks new controls for three
+cycles, then restores enable. Configuration-stage failures leave enable low.
+Direct hosts must use the documented disabled protocol. No RTL/GDS change.
+
+`scripts/verify-clocked-switch.py` generates a separate protocol report at
+`build/routed-spice/clocked-switch-matrix.json`: three guarded PVT/RC cases and
+two nominal live diagnostics. It rechecks current full raw-trace analysis while
+preserving original simulation provenance. Its `PASS_SAFE_SWITCH_PROTOCOL`
+status applies only to the stated control/source cone plus first divider stage,
+and does not relabel the failed historical full-divider/cut-control matrix.
+Packaging validates the separate report before including `clocked-switch.json`;
+stale/missing results are removed and labeled absent. See the dated review and
+routed-verification document for final measurements and scope. Hardware and
+entropy validation remain open, as does fresh hosted CI for these changes.
+
+Final clocked protocol report: `PASS_SAFE_SWITCH_PROTOCOL`; all three guarded
+PVT/RC cases and both nominal live diagnostics passed current trace reanalysis.
+Safe-source frequencies span 67.739–420.180 MHz; minimum high/low widths
+1.151716/0.982671 ns. This supports the guarded firmware protocol without a
+silicon redesign; it does not supersede the failed ideal-Q matrix or validate
+arbitrary live switching, board operation or entropy.
+
+
+## Hosted release verification request — 2026-10-21
+
+The user authorized committing/pushing final files, running hosted GDS, Docs
+and official precheck, fixing failures, and identifying the exact passing
+revision. No order is authorized. The older `aaa7e7e...` fabrication candidate
+is historical; the current review fixes require a fresh passing candidate.
+A later documentation-only release record does not change the selected design
+revision. Keep local experimental evidence distinct from freshly hosted proofs.

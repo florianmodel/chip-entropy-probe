@@ -28,12 +28,29 @@ class EntropyProbe:
     def configure(self, source=0, test_mode=0, external_bit=0):
         if source not in range(4) or test_mode not in range(4) or external_bit not in (0, 1):
             raise ValueError('Source/test mode must be 0..3, external bit 0 or 1')
+        # Configuration changes must not restart a ring through a brief
+        # comparator/decoder transition while acquisition is enabled. Keep the
+        # old request stable for three manual cycles after disabling, then
+        # clock the new request for three cycles before restoring enable.
+        was_enabled = bool(self.control & 8)
+        if was_enabled:
+            self.control &= ~8
+            self._write()
+            for _ in range(3):
+                self.board.clock_project_once()
         self.control = (self.control & 63) | (source << 6)
         # Only bits 4..6 are MCU outputs. Never contend with sample/valid/report.
         self.board.uio_oe_pico.value = 0x70
         self.board.uio_out.value = (test_mode << 4) | (external_bit << 6)
         self._write()
-        self.board.clock_project_once()
+        for _ in range(3):
+            self.board.clock_project_once()
+        # Deliberately do not restore enable in a finally block: a failed
+        # configuration operation must leave acquisition disabled.
+        if was_enabled:
+            self.control |= 8
+            self._write()
+            self.board.clock_project_once()
 
     def enable(self, enabled=True):
         self.control = (self.control | 8) if enabled else (self.control & ~8)

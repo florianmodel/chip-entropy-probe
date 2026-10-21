@@ -1,26 +1,895 @@
 {
   "status": "PASS",
-  "checks": {
-    "timing__hold__ws__corner:nom_tt_025C_1v80": 0.33061551654404436,
-    "timing__setup__ws__corner:nom_tt_025C_1v80": 1.2304568823226842,
-    "timing__hold__ws__corner:nom_ss_100C_1v60": 0.6702526501301903,
-    "timing__setup__ws__corner:nom_ss_100C_1v60": 0.5028155811812307,
-    "timing__hold__ws__corner:nom_ff_n40C_1v95": 0.20495289379084441,
-    "timing__setup__ws__corner:nom_ff_n40C_1v95": 1.5006478706643431,
-    "timing__hold__ws": 0.20424067182261654,
-    "timing__setup__ws": 0.49574323826974404,
-    "timing__hold__ws__corner:min_tt_025C_1v80": 0.3298442445870242,
-    "timing__setup__ws__corner:min_tt_025C_1v80": 1.2337862192230904,
-    "timing__hold__ws__corner:min_ss_100C_1v60": 0.6692822041569194,
-    "timing__setup__ws__corner:min_ss_100C_1v60": 0.5080969122587388,
-    "timing__hold__ws__corner:min_ff_n40C_1v95": 0.20424067182261654,
-    "timing__setup__ws__corner:min_ff_n40C_1v95": 1.5031130099379397,
-    "timing__hold__ws__corner:max_tt_025C_1v80": 0.3319798696575928,
-    "timing__setup__ws__corner:max_tt_025C_1v80": 1.225917624335823,
-    "timing__hold__ws__corner:max_ss_100C_1v60": 0.6718651380967602,
-    "timing__setup__ws__corner:max_ss_100C_1v60": 0.49574323826974404,
-    "timing__hold__ws__corner:max_ff_n40C_1v95": 0.20621052671313247,
-    "timing__setup__ws__corner:max_ff_n40C_1v95": 1.4970631824610514
+  "analysis": "static timing on one routed/extracted layout; not oscillator frequency or silicon evidence",
+  "tool_image": "ghcr.io/librelane/librelane@sha256:f91b21d75f79871f9ccf37451020b5d2f7b3236881a997ff709c561e8280a30f",
+  "tool_version": "3.0.14",
+  "pdk": "sky130A",
+  "pdk_revision": "8afc8346a57fe1ab7934ba5a6056ea8b43078e71",
+  "corner_coverage": [
+    "max_ff_n40C_1v95",
+    "max_ss_100C_1v60",
+    "max_tt_025C_1v80",
+    "min_ff_n40C_1v95",
+    "min_ss_100C_1v60",
+    "min_tt_025C_1v80",
+    "nom_ff_n40C_1v95",
+    "nom_ss_100C_1v60",
+    "nom_tt_025C_1v80"
+  ],
+  "corners": {
+    "min_tt_025C_1v80": {
+      "process_corner": "tt_025C_1v80",
+      "parasitic_corner": "min",
+      "setup_worst_slack": 1.233786,
+      "hold_worst_slack": 0.329844,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 2.66,
+          "fmax_mhz": 376.11
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/min_tt_025C_1v80.log",
+      "failures": []
+    },
+    "min_ss_100C_1v60": {
+      "process_corner": "ss_100C_1v60",
+      "parasitic_corner": "min",
+      "setup_worst_slack": 0.508097,
+      "hold_worst_slack": 0.669282,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 5.67,
+          "fmax_mhz": 176.35
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/min_ss_100C_1v60.log",
+      "failures": []
+    },
+    "min_ff_n40C_1v95": {
+      "process_corner": "ff_n40C_1v95",
+      "parasitic_corner": "min",
+      "setup_worst_slack": 1.503113,
+      "hold_worst_slack": 0.204241,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 1.62,
+          "fmax_mhz": 615.56
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/min_ff_n40C_1v95.log",
+      "failures": []
+    },
+    "nom_tt_025C_1v80": {
+      "process_corner": "tt_025C_1v80",
+      "parasitic_corner": "nom",
+      "setup_worst_slack": 1.230457,
+      "hold_worst_slack": 0.330616,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 2.7,
+          "fmax_mhz": 371.02
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/nom_tt_025C_1v80.log",
+      "failures": []
+    },
+    "nom_ss_100C_1v60": {
+      "process_corner": "ss_100C_1v60",
+      "parasitic_corner": "nom",
+      "setup_worst_slack": 0.502816,
+      "hold_worst_slack": 0.670253,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 5.72,
+          "fmax_mhz": 174.84
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/nom_ss_100C_1v60.log",
+      "failures": []
+    },
+    "nom_ff_n40C_1v95": {
+      "process_corner": "ff_n40C_1v95",
+      "parasitic_corner": "nom",
+      "setup_worst_slack": 1.500648,
+      "hold_worst_slack": 0.204953,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 1.65,
+          "fmax_mhz": 606.2
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/nom_ff_n40C_1v95.log",
+      "failures": []
+    },
+    "max_tt_025C_1v80": {
+      "process_corner": "tt_025C_1v80",
+      "parasitic_corner": "max",
+      "setup_worst_slack": 1.225918,
+      "hold_worst_slack": 0.33198,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 2.73,
+          "fmax_mhz": 366.17
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/max_tt_025C_1v80.log",
+      "failures": []
+    },
+    "max_ss_100C_1v60": {
+      "process_corner": "ss_100C_1v60",
+      "parasitic_corner": "max",
+      "setup_worst_slack": 0.495743,
+      "hold_worst_slack": 0.671865,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 5.76,
+          "fmax_mhz": 173.62
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/max_ss_100C_1v60.log",
+      "failures": []
+    },
+    "max_ff_n40C_1v95": {
+      "process_corner": "ff_n40C_1v95",
+      "parasitic_corner": "max",
+      "setup_worst_slack": 1.497063,
+      "hold_worst_slack": 0.206211,
+      "setup_path_count": 11,
+      "hold_path_count": 11,
+      "min_period_report_present": true,
+      "min_period_rows": [
+        {
+          "clock": "clk",
+          "period_min": 1.67,
+          "fmax_mhz": 597.87
+        },
+        {
+          "clock": "ro_clock",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div0",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div1",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div2",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div3",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div4",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div5",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div6",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div7",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div8",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        },
+        {
+          "clock": "div9",
+          "period_min": 0.0,
+          "fmax_mhz": null
+        }
+      ],
+      "pulse_width_report_present": true,
+      "pulse_width_check_count": 154,
+      "pulse_width_check_types": [
+        "sequential_clock_pulse_width"
+      ],
+      "pulse_period_violations": "",
+      "coverage": {
+        "divider_stage_0": true,
+        "divider_stage_1": true,
+        "divider_stage_2": true,
+        "divider_stage_3": true,
+        "divider_stage_4": true,
+        "divider_stage_5": true,
+        "divider_stage_6": true,
+        "divider_stage_7": true,
+        "divider_stage_8": true,
+        "divider_stage_9": true,
+        "sync_meta_to_sync_sample": true,
+        "sync_sample_to_monitor": true
+      },
+      "invalid_object_warnings": [],
+      "opensta_errors": [],
+      "log": "build/timing-review/max_ff_n40C_1v95.log",
+      "failures": []
+    }
   },
-  "note": "Same routed/extracted layout, precise register-only asynchronous endpoints."
+  "input_fingerprints": {
+    ".tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib": "fb61d91c55a7f85b1989e8149d040b13ba5e7f5478f5bf0c3c16c5da30720139",
+    ".tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib": "9b24f0db3967ac67b4cae1f74bb480fd47922d18d0ed577e3c121739b412c361",
+    ".tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib": "8e78e14442062dba34d414fca6490b2f6b96038d4510d1438ca44fee31487135",
+    "build/tinytapeout/src/runs/verified/final/gds/tt_um_entropy_probe.gds": "90a2db31e5de3ac458acb6232422c9ca1698dba48ec9802672c890a0eb59f8da",
+    "build/tinytapeout/src/runs/verified/final/nl/tt_um_entropy_probe.nl.v": "3a92b8a0a7808af482765ab68a7db90ea548eeb2f46a331cd2d593a331b4d5eb",
+    "build/tinytapeout/src/runs/verified/final/spef/max/tt_um_entropy_probe.max.spef": "d98ca7fb916372dcd6f01a25290e6eebe4f32074532d868258f7380e7dd4cdb5",
+    "build/tinytapeout/src/runs/verified/final/spef/min/tt_um_entropy_probe.min.spef": "3bc3ce5921cd3d26761a0b16018e0b921df60ef86cc08d1c0ac777df9c9b6e52",
+    "build/tinytapeout/src/runs/verified/final/spef/nom/tt_um_entropy_probe.nom.spef": "7859fcfeecd2cd1cf5ccd39e584385ea77fdf29ffc89006d38f07dfc99d09ab2",
+    "examples/resilient-probe/frequency_divider.v": "6e9c3399ff5b1036c0d24a186fe4bf901be3cac3a18efd175a2cb8e38913940b",
+    "examples/resilient-probe/measurement_monitor.v": "a956d6bace91b42e7e21ae70b2f5163791c9567080c1d9c6412dc1e5676849e0",
+    "examples/resilient-probe/measurement_ring.v": "ae1f703e0db48e081d02b4be676723e5ab28cb95cc5db533bc9c43c950f588dc",
+    "examples/resilient-probe/resilient_probe.v": "37d7afb246d0d20e19c31b465281a37f03c6f25d5939eeb1f096fcc1fbc6b331",
+    "scripts/timing-review.py": "4e6c74f965b3ef8fe695572a666213c47a1638b6597d135e0efaa97ebe0715e3",
+    "tinytapeout/src/constraints.sdc": "c6959a510c70cfe4228d6404a5e41608c2179ad075f906816b4776dfbb9751a5",
+    "tinytapeout/src/tt_um_entropy_probe.v": "2f8ee5a4a5be3fd38bb1e97e8c6495acf2edee786b2aac830dbdff8d5aedecc9",
+    "toolchain.lock.json": "f05c892f70eeadd5d6320e0051455880543379c5a1dc3ee8f8223e3fb92a20ad"
+  },
+  "failures": []
 }

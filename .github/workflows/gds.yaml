@@ -11,7 +11,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04-arm
-    timeout-minutes: 35
+    timeout-minutes: 50
     env:
       CHIP_DOCKER_CONTEXT: default
     steps:
@@ -23,6 +23,14 @@ jobs:
           echo "$GITHUB_WORKSPACE/.venv/bin" >> "$GITHUB_PATH"
       - name: Install pinned container and PDK
         run: python3 scripts/chip.py prepare
+      - name: Build and record the ngspice simulation image
+        run: |
+          docker build --platform linux/arm64 -f toolchain/spice.Dockerfile -t chip-ngspice:39 .
+          docker image inspect chip-ngspice:39 --format '{{.Id}}'
+      - name: Regenerate loaded and unloaded schematic SPICE evidence
+        run: python3 scripts/spice.py
+      - name: Check evidence freshness failure cases
+        run: python3 scripts/test-evidence.py
       - name: Verify RTL and mapped monitor
         run: |
           python3 scripts/chip.py tt-rtl
@@ -34,6 +42,10 @@ jobs:
           python3 scripts/chip.py tool bash /work/scripts/verify-physical.sh
           python3 scripts/test-firmware.py
           python3 scripts/test-capture.py
+          python3 scripts/test_inspect_tt_disconnected.py
+          python3 scripts/test_timing_review.py
+          python3 scripts/test-routed-spice.py
+          python3 scripts/timing-review.py
       - name: Export the uniquely named tile
         run: python3 scripts/package-submission.py
       - name: Save fresh build and evidence

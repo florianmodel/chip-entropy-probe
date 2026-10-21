@@ -1,74 +1,105 @@
-[
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": -40,
-    "stages": 71,
-    "frequency_MHz": 390.8738573011767,
-    "rising_edges_after_50ns": 59
+{
+  "status": "PASS",
+  "schema": 1,
+  "image_id": "sha256:ad4965835f4617f2a223d6e84fd8ac1a88a8483052d7ba673fa4f673c6462aa7",
+  "input_fingerprints": {
+    "model_tree_sha256": "4c9891a686fcedf0b1ca83a697d9a2b4c775bd11f762a044e8e9bea6fa0bdb5a",
+    "cell_library_sha256": "304da9725492089107bb20840a4020558b028487d300f8df79bbbad5332aaa99",
+    "generator_sha256": "7ed563c5650414a853886b00145ba61036a14673c126c067e85d22dc26af46ca"
   },
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": -40,
-    "stages": 95,
-    "frequency_MHz": 292.7426699860437,
-    "rising_edges_after_50ns": 44
-  },
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": -40,
-    "stages": 127,
-    "frequency_MHz": 219.2982695020752,
-    "rising_edges_after_50ns": 33
-  },
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": 25,
-    "stages": 71,
-    "frequency_MHz": 390.6250404877462,
-    "rising_edges_after_50ns": 59
-  },
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": 25,
-    "stages": 95,
-    "frequency_MHz": 292.96234455943863,
-    "rising_edges_after_50ns": 44
-  },
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": 25,
-    "stages": 127,
-    "frequency_MHz": 219.2982563014947,
-    "rising_edges_after_50ns": 33
-  },
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": 100,
-    "stages": 71,
-    "frequency_MHz": 385.3298070087934,
-    "rising_edges_after_50ns": 58
-  },
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": 100,
-    "stages": 95,
-    "frequency_MHz": 288.8261028237437,
-    "rising_edges_after_50ns": 43
-  },
-  {
-    "corner": "ff",
-    "voltage": 1.95,
-    "temp_C": 100,
-    "stages": 127,
-    "frequency_MHz": 216.40906818747933,
-    "rising_edges_after_50ns": 33
-  }
-]
+  "scope": "Schematic transistor-model transient with lumped per-stage and output loads; not extracted layout RC.",
+  "entropy_claim": "None. Deterministic simulation does not model or establish entropy.",
+  "frequency_limit_MHz": 500.0,
+  "cases": [
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": -40,
+      "stages": 71,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 390.8738573011767,
+      "rising_edges_after_50ns": 59,
+      "cache": "simulated"
+    },
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": -40,
+      "stages": 95,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 292.7426699860437,
+      "rising_edges_after_50ns": 44,
+      "cache": "simulated"
+    },
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": -40,
+      "stages": 127,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 219.2982695020752,
+      "rising_edges_after_50ns": 33,
+      "cache": "simulated"
+    },
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": 25,
+      "stages": 71,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 390.6250404877462,
+      "rising_edges_after_50ns": 59,
+      "cache": "simulated"
+    },
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": 25,
+      "stages": 95,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 292.96234455943863,
+      "rising_edges_after_50ns": 44,
+      "cache": "simulated"
+    },
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": 25,
+      "stages": 127,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 219.2982563014947,
+      "rising_edges_after_50ns": 33,
+      "cache": "simulated"
+    },
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": 100,
+      "stages": 71,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 385.3298070087934,
+      "rising_edges_after_50ns": 58,
+      "cache": "simulated"
+    },
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": 100,
+      "stages": 95,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 288.8261028237437,
+      "rising_edges_after_50ns": 43,
+      "cache": "simulated"
+    },
+    {
+      "corner": "ff",
+      "voltage": 1.95,
+      "temp_C": 100,
+      "stages": 127,
+      "wire_load_fF_per_stage": 0,
+      "frequency_MHz": 216.40906818747933,
+      "rising_edges_after_50ns": 33,
+      "cache": "simulated"
+    }
+  ]
+}

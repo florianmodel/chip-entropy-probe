@@ -15,13 +15,14 @@ class Board:
         self.ui_in = Port(); self.uio_in = Port(); self.uio_out = Port(); self.uio_oe_pico = Port(255)
         self.pins = self
         self.ticks = 0; self.in_reset = False; self.valid = True; self.fail_read = False
-        self.clock_owned = False; self.level = 1; self.frozen_edges = 0
+        self.clock_owned = False; self.level = 1; self.frozen_edges = 0; self.history = []
         self.registers = [18, 7, 0, 1, 0, 0, 0, 1]
     def clock_project_stop(self): pass
     def project_clk_driven_by_RP2(self, value): self.clock_owned = value
     def clk(self, value): self.level = value
     def reset_project(self, value): self.in_reset = value
     def clock_project_once(self):
+        self.history.append((self.ui_in.value, self.uio_out.value))
         assert self.clock_owned and self.level == 0
         if self.in_reset or not self.ui_in.value & 8: self.ticks = 0
         else: self.ticks += 1
@@ -56,6 +57,33 @@ class Tests(unittest.TestCase):
         report = self.probe.report()
         self.assertEqual((report['ones'],report['source'],report['test_mode']), (256,3,1))
         with self.assertRaises(ValueError): self.probe.configure(4)
+    def test_configure_disables_before_request_and_restores_after_settling(self):
+        self.probe.enable()
+        self.board.history.clear()
+        self.probe.configure(source=1, test_mode=2)
+        self.assertEqual(len(self.board.history),7)
+        self.assertTrue(all(not control & 8 and control >> 6 == 0 and uio == 0
+                            for control,uio in self.board.history[:3]))
+        self.assertTrue(all(not control & 8 and control >> 6 == 1 and uio == 0x20
+                            for control,uio in self.board.history[3:6]))
+        self.assertTrue(self.board.history[6][0] & 8)
+        self.assertTrue(self.probe.control & 8)
+
+    def test_failed_configuration_does_not_restore_acquisition(self):
+        self.probe.enable()
+        original=self.board.clock_project_once
+        calls=[]
+        def fail_on_new_configuration():
+            calls.append(1)
+            if len(calls)==4:
+                raise RuntimeError('configuration clock failed')
+            original()
+        self.board.clock_project_once=fail_on_new_configuration
+        with self.assertRaises(RuntimeError):
+            self.probe.configure(source=1)
+        self.assertFalse(self.probe.control & 8)
+        self.assertFalse(self.board.ui_in.value & 8)
+
     def test_failure_releases_freeze(self):
         self.board.fail_read = True
         with self.assertRaises(RuntimeError): self.probe.report()

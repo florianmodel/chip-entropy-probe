@@ -440,3 +440,23 @@ reports. Three regression tests cover the current schema and negative inputs.
 Cheap regression checks now run before the hosted expensive simulations.
 This fixes archive/tooling behavior; it does not change RTL or layout. A fresh
 passing revision is still required before submission.
+
+### Completed hosted verification
+
+The final passing revision is `5c18820752c6f92c0c089366977bce73828617c0`.
+[GDS run 39663509277](https://github.com/florianmodel/chip-entropy-probe/actions/runs/39663509277)
+passed fresh build, official packaging and official precheck;
+[Docs run 39663509368](https://github.com/florianmodel/chip-entropy-probe/actions/runs/39663509368)
+passed for the same SHA. A second retry had caught capture-test ordering; the
+test now runs after its routed simulation fixture is generated. No RTL or
+layout change was needed for either CI repair.
+
+The hosted geometry, 308 placements, netlist fingerprint and all nine timing
+corner results match the local design. All 30 source hashes and ten exported
+artifact hashes were checked. Raw hosted SPEFs were not archived, so their hash
+differences cannot be resolved to content equivalence; fresh hosted timing
+passed on its own extraction. Optional local transistor reports remain
+absent/unverified in hosted evidence. See [the release record](release-2026-10-21.md)
+for exact artifact hashes and scope. Prior statements that fresh hosted CI was
+outstanding describe earlier stages and are superseded by this result.
+Delivered-board and entropy validation remain open. No order was placed.

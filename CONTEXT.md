@@ -286,3 +286,18 @@ revision. No order is authorized. The older `aaa7e7e...` fabrication candidate
 is historical; the current review fixes require a fresh passing candidate.
 A later documentation-only release record does not change the selected design
 revision. Keep local experimental evidence distinct from freshly hosted proofs.
+
+### Completed hosted release
+
+Select `5c18820752c6f92c0c089366977bce73828617c0` for fabrication submission.
+GDS run 39663509277 passed build, official custom-GDS packaging and official
+precheck; Docs run 39663509368 passed for the same exact SHA. This supersedes
+the historical `aaa7e7e...` selection above. See `docs/release-2026-10-21.md`
+for links, artifact hashes and the two CI-tooling fixes made during this release.
+All 30 source and ten exported-artifact hashes were checked. Hosted geometry,
+308 instance placements, netlist fingerprint and all nine timing results match
+local evidence. Raw hosted SPEFs are unavailable for content comparison; fresh
+hosted timing passed independently. Optional local transistor reports are
+correctly absent/unverified in hosted packaging. No order, portal submission or
+visibility change occurred. A documentation-only child commit records this
+outcome; it is not the selected fabrication revision.

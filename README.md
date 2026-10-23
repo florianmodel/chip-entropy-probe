@@ -461,11 +461,14 @@ that exporting preserves the physical design.
 Hosted `gds` first rebuilds with the pinned container, PDK and compact-ring
 placement, then verifies RTL, mapped logic, routed logic and capture decoding.
 It runs Tiny Tapeout's pinned custom-GDS packaging and independent shuttle
-precheck. `docs` generates the official PDF. The 2026-10-23 registered ring-enable
-revision supersedes the earlier selection below; its exact SHA is selected only
-after its hosted GDS and Docs workflows pass, and is recorded in a dated release
-record. Until then, the previous verified fabrication revision is
-**`5c18820752c6f92c0c089366977bce73828617c0`**.
+precheck. `docs` generates the official PDF. The selected, verified fabrication
+revision is **`4ff1a8a41a17988c6fe36cc117ba1ae9142eb83e`** (registered ring
+enables), recorded in the [2026-10-23 release record](docs/release-2026-10-23.md):
+
+- [GDS build, packaging and precheck](https://github.com/florianmodel/chip-entropy-probe/actions/runs/39947211390)
+- [Official datasheet generation](https://github.com/florianmodel/chip-entropy-probe/actions/runs/39947211712)
+
+The superseded earlier selection was **`5c18820752c6f92c0c089366977bce73828617c0`**:
 
 - [GDS build, packaging and precheck](https://github.com/florianmodel/chip-entropy-probe/actions/runs/39663509277)
 - [Official datasheet generation](https://github.com/florianmodel/chip-entropy-probe/actions/runs/39663509368)

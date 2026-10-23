@@ -323,3 +323,11 @@ loaded + 9 unloaded pass. Routed matrix `PASS_SCOPED_PARTITION_MODEL` for the
 first time (67.662–426.658 MHz, /1024 within 0.1%), including the 1 ns cut switch
 control. Clocked report `PASS_SAFE_SWITCH_PROTOCOL` with five control flops.
 `5c18820...` stays the fallback until the new revision passes hosted CI.
+
+### Completed hosted release — 2026-10-23
+
+Select `4ff1a8a41a17988c6fe36cc117ba1ae9142eb83e`. GDS run 39947211390 passed
+build, official custom-GDS packaging and 15/15 official precheck; Docs run
+39947211712 passed. Hosted geometry, positions and timing equal local; exported,
+local and official package GDS are byte-identical. See
+`docs/release-2026-10-23.md`. No order, portal submission or visibility change.

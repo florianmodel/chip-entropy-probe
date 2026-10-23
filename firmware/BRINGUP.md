@@ -196,6 +196,14 @@ A failed configuration operation leaves acquisition disabled. An intentional
 configuration call aborts the partial acquisition window; completed reports
 retain their recorded configuration.
 
+Ring enables are registered flip-flops gated only by `ena` and reset. A ring
+starts one clock edge after its selection is captured; a selection change keeps
+every ring off for at least one clock period, and test-mode pins (UIO4/UIO5)
+cannot stop or restart a running ring. At the slowest simulated ring frequency
+one 20 ns clock period only just exceeds the ring's half period, so the guarded
+sequence's extra cycles, or the recommended 100 kHz–5 MHz clocks, keep a wide
+margin.
+
 The earlier ideal-control experiment reproducibly exceeded the timing envelope
 for a 1 ns response. Nominal experiments including the actual mapped
 configuration registers and routed clock tree pass for both tested live-switch

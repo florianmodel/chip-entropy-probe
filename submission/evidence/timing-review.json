@@ -20,16 +20,16 @@
     "min_tt_025C_1v80": {
       "process_corner": "tt_025C_1v80",
       "parasitic_corner": "min",
-      "setup_worst_slack": 1.233786,
-      "hold_worst_slack": 0.329844,
+      "setup_worst_slack": 1.241614,
+      "hold_worst_slack": 0.331538,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 2.66,
-          "fmax_mhz": 376.11
+          "period_min": 2.56,
+          "fmax_mhz": 390.77
         },
         {
           "clock": "ro_clock",
@@ -88,7 +88,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -115,16 +115,16 @@
     "min_ss_100C_1v60": {
       "process_corner": "ss_100C_1v60",
       "parasitic_corner": "min",
-      "setup_worst_slack": 0.508097,
-      "hold_worst_slack": 0.669282,
+      "setup_worst_slack": 0.520662,
+      "hold_worst_slack": 0.671549,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 5.67,
-          "fmax_mhz": 176.35
+          "period_min": 5.03,
+          "fmax_mhz": 198.73
         },
         {
           "clock": "ro_clock",
@@ -183,7 +183,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -210,16 +210,16 @@
     "min_ff_n40C_1v95": {
       "process_corner": "ff_n40C_1v95",
       "parasitic_corner": "min",
-      "setup_worst_slack": 1.503113,
-      "hold_worst_slack": 0.204241,
+      "setup_worst_slack": 1.507977,
+      "hold_worst_slack": 0.205175,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 1.62,
-          "fmax_mhz": 615.56
+          "period_min": 1.59,
+          "fmax_mhz": 628.22
         },
         {
           "clock": "ro_clock",
@@ -278,7 +278,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -305,16 +305,16 @@
     "nom_tt_025C_1v80": {
       "process_corner": "tt_025C_1v80",
       "parasitic_corner": "nom",
-      "setup_worst_slack": 1.230457,
-      "hold_worst_slack": 0.330616,
+      "setup_worst_slack": 1.238701,
+      "hold_worst_slack": 0.332539,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 2.7,
-          "fmax_mhz": 371.02
+          "period_min": 2.6,
+          "fmax_mhz": 384.59
         },
         {
           "clock": "ro_clock",
@@ -373,7 +373,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -400,16 +400,16 @@
     "nom_ss_100C_1v60": {
       "process_corner": "ss_100C_1v60",
       "parasitic_corner": "nom",
-      "setup_worst_slack": 0.502816,
-      "hold_worst_slack": 0.670253,
+      "setup_worst_slack": 0.516291,
+      "hold_worst_slack": 0.673016,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 5.72,
-          "fmax_mhz": 174.84
+          "period_min": 5.09,
+          "fmax_mhz": 196.54
         },
         {
           "clock": "ro_clock",
@@ -468,7 +468,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -495,16 +495,16 @@
     "nom_ff_n40C_1v95": {
       "process_corner": "ff_n40C_1v95",
       "parasitic_corner": "nom",
-      "setup_worst_slack": 1.500648,
-      "hold_worst_slack": 0.204953,
+      "setup_worst_slack": 1.505864,
+      "hold_worst_slack": 0.20589,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 1.65,
-          "fmax_mhz": 606.2
+          "period_min": 1.62,
+          "fmax_mhz": 616.41
         },
         {
           "clock": "ro_clock",
@@ -563,7 +563,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -590,16 +590,16 @@
     "max_tt_025C_1v80": {
       "process_corner": "tt_025C_1v80",
       "parasitic_corner": "max",
-      "setup_worst_slack": 1.225918,
-      "hold_worst_slack": 0.33198,
+      "setup_worst_slack": 1.235265,
+      "hold_worst_slack": 0.333772,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 2.73,
-          "fmax_mhz": 366.17
+          "period_min": 2.64,
+          "fmax_mhz": 379.27
         },
         {
           "clock": "ro_clock",
@@ -658,7 +658,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -685,16 +685,16 @@
     "max_ss_100C_1v60": {
       "process_corner": "ss_100C_1v60",
       "parasitic_corner": "max",
-      "setup_worst_slack": 0.495743,
-      "hold_worst_slack": 0.671865,
+      "setup_worst_slack": 0.511293,
+      "hold_worst_slack": 0.674462,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 5.76,
-          "fmax_mhz": 173.62
+          "period_min": 5.14,
+          "fmax_mhz": 194.56
         },
         {
           "clock": "ro_clock",
@@ -753,7 +753,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -780,16 +780,16 @@
     "max_ff_n40C_1v95": {
       "process_corner": "ff_n40C_1v95",
       "parasitic_corner": "max",
-      "setup_worst_slack": 1.497063,
-      "hold_worst_slack": 0.206211,
+      "setup_worst_slack": 1.503274,
+      "hold_worst_slack": 0.206958,
       "setup_path_count": 11,
       "hold_path_count": 11,
       "min_period_report_present": true,
       "min_period_rows": [
         {
           "clock": "clk",
-          "period_min": 1.67,
-          "fmax_mhz": 597.87
+          "period_min": 1.65,
+          "fmax_mhz": 607.68
         },
         {
           "clock": "ro_clock",
@@ -848,7 +848,7 @@
         }
       ],
       "pulse_width_report_present": true,
-      "pulse_width_check_count": 154,
+      "pulse_width_check_count": 160,
       "pulse_width_check_types": [
         "sequential_clock_pulse_width"
       ],
@@ -877,18 +877,18 @@
     ".tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib": "fb61d91c55a7f85b1989e8149d040b13ba5e7f5478f5bf0c3c16c5da30720139",
     ".tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib": "9b24f0db3967ac67b4cae1f74bb480fd47922d18d0ed577e3c121739b412c361",
     ".tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib": "8e78e14442062dba34d414fca6490b2f6b96038d4510d1438ca44fee31487135",
-    "build/tinytapeout/src/runs/verified/final/gds/tt_um_entropy_probe.gds": "90a2db31e5de3ac458acb6232422c9ca1698dba48ec9802672c890a0eb59f8da",
-    "build/tinytapeout/src/runs/verified/final/nl/tt_um_entropy_probe.nl.v": "3a92b8a0a7808af482765ab68a7db90ea548eeb2f46a331cd2d593a331b4d5eb",
-    "build/tinytapeout/src/runs/verified/final/spef/max/tt_um_entropy_probe.max.spef": "d98ca7fb916372dcd6f01a25290e6eebe4f32074532d868258f7380e7dd4cdb5",
-    "build/tinytapeout/src/runs/verified/final/spef/min/tt_um_entropy_probe.min.spef": "3bc3ce5921cd3d26761a0b16018e0b921df60ef86cc08d1c0ac777df9c9b6e52",
-    "build/tinytapeout/src/runs/verified/final/spef/nom/tt_um_entropy_probe.nom.spef": "7859fcfeecd2cd1cf5ccd39e584385ea77fdf29ffc89006d38f07dfc99d09ab2",
+    "build/tinytapeout/src/runs/verified/final/gds/tt_um_entropy_probe.gds": "35269a353e57f0ae4c8f1c7c5ecbacc8dbdd8f9d365c6aba5e55d9c460452217",
+    "build/tinytapeout/src/runs/verified/final/nl/tt_um_entropy_probe.nl.v": "a9764a09bfd312038d1f4506d8d38bba5681b4821dfc93da33837a9993ab3f62",
+    "build/tinytapeout/src/runs/verified/final/spef/max/tt_um_entropy_probe.max.spef": "c33f5f49233364072b037f167f78f0ddcd84a2280646afeadcfc424349a60d6f",
+    "build/tinytapeout/src/runs/verified/final/spef/min/tt_um_entropy_probe.min.spef": "84f334437aeece3568c613ca01ca46f692a93f8242c7a30e345710fac36b9544",
+    "build/tinytapeout/src/runs/verified/final/spef/nom/tt_um_entropy_probe.nom.spef": "116d090e053cbdea36158ca6e41886366fb960bbac0ae0a122c7600ff8f50208",
     "examples/resilient-probe/frequency_divider.v": "6e9c3399ff5b1036c0d24a186fe4bf901be3cac3a18efd175a2cb8e38913940b",
     "examples/resilient-probe/measurement_monitor.v": "a956d6bace91b42e7e21ae70b2f5163791c9567080c1d9c6412dc1e5676849e0",
-    "examples/resilient-probe/measurement_ring.v": "ae1f703e0db48e081d02b4be676723e5ab28cb95cc5db533bc9c43c950f588dc",
-    "examples/resilient-probe/resilient_probe.v": "37d7afb246d0d20e19c31b465281a37f03c6f25d5939eeb1f096fcc1fbc6b331",
+    "examples/resilient-probe/measurement_ring.v": "df6f4daf274740468d24de8876ca27437f30bc4136a400ee1c0aa034afb561b8",
+    "examples/resilient-probe/resilient_probe.v": "df292b15545f901ae22b5a3bd4a4f802af8bc8ddc483259e4f465497b5ab064a",
     "scripts/timing-review.py": "4e6c74f965b3ef8fe695572a666213c47a1638b6597d135e0efaa97ebe0715e3",
     "tinytapeout/src/constraints.sdc": "c6959a510c70cfe4228d6404a5e41608c2179ad075f906816b4776dfbb9751a5",
-    "tinytapeout/src/tt_um_entropy_probe.v": "2f8ee5a4a5be3fd38bb1e97e8c6495acf2edee786b2aac830dbdff8d5aedecc9",
+    "tinytapeout/src/tt_um_entropy_probe.v": "c49cd0a6682b865f829a425cd9e2775502107815fdf7ae19daf9589a2c2bf7fe",
     "toolchain.lock.json": "f05c892f70eeadd5d6320e0051455880543379c5a1dc3ee8f8223e3fb92a20ad"
   },
   "failures": []

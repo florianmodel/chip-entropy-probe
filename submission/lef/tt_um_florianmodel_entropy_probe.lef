@@ -68,7 +68,7 @@ MACRO tt_um_florianmodel_entropy_probe
   PIN rst_n
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 141.070 110.520 141.370 111.520 ;
@@ -372,7 +372,7 @@ MACRO tt_um_florianmodel_entropy_probe
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.462000 ;
+    ANTENNADIFFAREA 0.621000 ;
     PORT
       LAYER met4 ;
         RECT 88.630 110.520 88.930 111.520 ;
@@ -399,7 +399,7 @@ MACRO tt_um_florianmodel_entropy_probe
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.453750 ;
+    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 80.350 110.520 80.650 111.520 ;
@@ -408,7 +408,7 @@ MACRO tt_um_florianmodel_entropy_probe
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.453750 ;
+    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 77.590 110.520 77.890 111.520 ;
@@ -417,7 +417,7 @@ MACRO tt_um_florianmodel_entropy_probe
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.453750 ;
+    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 74.830 110.520 75.130 111.520 ;
@@ -429,12 +429,13 @@ MACRO tt_um_florianmodel_entropy_probe
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 2.480 158.240 109.440 ;
+        RECT 2.760 2.480 158.240 110.460 ;
       LAYER met2 ;
-        RECT 6.540 2.535 154.920 110.685 ;
+        RECT 3.780 2.535 152.160 110.685 ;
       LAYER met3 ;
-        RECT 13.405 2.555 147.135 110.665 ;
+        RECT 5.125 2.555 147.135 110.665 ;
       LAYER met4 ;
+        RECT 20.535 110.120 30.270 110.665 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;
         RECT 36.890 110.120 38.550 110.665 ;
@@ -477,14 +478,15 @@ MACRO tt_um_florianmodel_entropy_probe
         RECT 139.010 110.120 140.670 110.665 ;
         RECT 141.770 110.120 143.430 110.665 ;
         RECT 144.530 110.120 146.190 110.665 ;
-        RECT 30.655 109.440 146.905 110.120 ;
-        RECT 30.655 53.215 56.750 109.440 ;
-        RECT 59.150 53.215 60.050 109.440 ;
-        RECT 62.450 53.215 95.620 109.440 ;
-        RECT 98.020 53.215 98.920 109.440 ;
-        RECT 101.320 53.215 134.490 109.440 ;
-        RECT 136.890 53.215 137.790 109.440 ;
-        RECT 140.190 53.215 146.905 109.440 ;
+        RECT 20.535 109.440 146.905 110.120 ;
+        RECT 20.535 72.255 21.180 109.440 ;
+        RECT 23.580 72.255 56.750 109.440 ;
+        RECT 59.150 72.255 60.050 109.440 ;
+        RECT 62.450 72.255 95.620 109.440 ;
+        RECT 98.020 72.255 98.920 109.440 ;
+        RECT 101.320 72.255 134.490 109.440 ;
+        RECT 136.890 72.255 137.790 109.440 ;
+        RECT 140.190 72.255 146.905 109.440 ;
   END
 END tt_um_florianmodel_entropy_probe
 END LIBRARY

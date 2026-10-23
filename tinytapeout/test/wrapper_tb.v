@@ -1,8 +1,13 @@
 `timescale 1ns/1ps
 // Deterministic stand-in; this makes no claim about physical entropy.
-module oscillator_bank(input wire enable,input wire [1:0] select,output wire raw_out);
+module oscillator_bank(input wire [2:0] enable,output wire raw_out);
  reg stimulus=0;
- assign raw_out=enable ? stimulus : 0;
+ integer rises=0,falls=0;
+ realtime last_fall=0,min_off=1e9;
+ always @(enable) if(enable!==0 && enable!==3'b001 && enable!==3'b010 && enable!==3'b100) $fatal(1,"Ring enables not one-hot: %b",enable);
+ always @(posedge (|enable)) begin rises=rises+1; if($realtime-last_fall<min_off) min_off=$realtime-last_fall; end
+ always @(negedge (|enable)) begin falls=falls+1; last_fall=$realtime; end
+ assign raw_out=(|enable) ? stimulus : 0;
 endmodule
 module wrapper_tb;
  reg clk=0,rst_n=0,ena=1;
@@ -24,7 +29,7 @@ module wrapper_tb;
  begin
  ui_in[7:6]=source;uio_in[5:4]=testmode;#1;
  if(uio_out[1]!==0) $fatal(1,"Mode change must invalidate immediately");
- tick; read_reg(6,0);repeat(258)tick;
+ tick; read_reg(6,0);repeat(source==3 ? 258 : 259)tick;
  end endtask
  integer i;
  initial begin
@@ -41,9 +46,24 @@ module wrapper_tb;
  dut.probe.bank.stimulus=i%2;mode(i,0);
  read_reg(3, (i<<3) | (i%2));
  end
+ // Glitches between clock edges on selection and test pins must not touch a running ring.
+ mode(0,0);i=dut.probe.bank.rises;
+ if(dut.probe.bank.enable!==3'b001) $fatal(1,"Ring 0 not running");
+ #1;uio_in[5:4]=2;#1;uio_in[5:4]=0;ui_in[7:6]=1;#1;ui_in[7:6]=0;#1;ui_in[3]=0;#1;ui_in[3]=1;tick;
+ if(dut.probe.bank.rises!==i || dut.probe.bank.enable!==3'b001) $fatal(1,"Pin glitch restarted ring");
+ // A sustained test-mode pin change aborts the window but leaves the ring running.
+ uio_in[5:4]=1;repeat(3)tick;
+ if(dut.probe.bank.rises!==i || dut.probe.bank.enable!==3'b001) $fatal(1,"Test pins restarted ring");
+ uio_in[5:4]=0;repeat(3)tick;
+ // A selection change leaves all rings off for at least one clock period (15 ns here).
+ dut.probe.bank.min_off=1e9;ui_in[7:6]=2;repeat(3)tick;
+ if(dut.probe.bank.enable!==3'b100 || dut.probe.bank.min_off<15) $fatal(1,"Switch off time %0t",dut.probe.bank.min_off);
+ // ena and rst_n stop the ring immediately, without a clock edge.
+ ena=0;#1;if(dut.probe.bank.enable!==0) $fatal(1,"ena must stop ring without clock");ena=1;repeat(3)tick;
+ rst_n=0;#1;if(dut.probe.bank.enable!==0) $fatal(1,"rst_n must stop ring without clock");tick;rst_n=1;ui_in[7:6]=0;repeat(3)tick;
  ena=0;repeat(3)tick;ena=1;ui_in[3]=0;tick;
  if(uio_out[1:0]!==0) $fatal(1,"Disabled sample validity");
  rst_n=0;tick;rst_n=1;read_reg(1,0);
- $display("PASS: source changes, test modes, report provenance, reset, freeze and TT pins");$finish;
+ $display("PASS: registered ring enables, source changes, test modes, report provenance, reset, freeze and TT pins");$finish;
  end
 endmodule

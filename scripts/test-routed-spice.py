@@ -52,6 +52,13 @@ class RoutedSpiceTests(unittest.TestCase):
         self.assertIn('config_ff',selected)
         self.assertEqual(set(bounds),{'request','clk','enable'})
 
+    def test_cut_model_drives_only_selected_ring_run(self):
+        for selection in range(3):
+            self.assertEqual([r.level_for(f'probe.ring_run[{k}]',selection) for k in range(3)],
+                             [int(k==selection) for k in range(3)])
+            self.assertEqual(r.level_for('probe.configuration[2]',selection)+2*r.level_for('probe.configuration[3]',selection),selection)
+        with self.assertRaises(ValueError):r.level_for('probe.bank.select[0]',0)
+
     def test_clocked_configuration_must_actually_change(self):
         trace=self.trace()
         trace['config0']=[0.]*len(trace['time'])

@@ -10,7 +10,7 @@ module tt_um_florianmodel_entropy_probe (
     wire [7:0] data;
     wire divided, sampled_bit, sample_valid, report_ready;
     resilient_probe probe (
-        .clk(clk), .rst_n(rst_n), .enable(ena && ui_in[3]),
+        .clk(clk), .rst_n(rst_n), .ena(ena), .enable(ena && ui_in[3]),
         .freeze_report(ui_in[4]), .addr(ui_in[2:0]), .data(data),
         .source_select(ui_in[7:6]), .test_select(uio_in[5:4]), .external_bit(uio_in[6]),
         .divided(divided), .sampled_bit(sampled_bit),

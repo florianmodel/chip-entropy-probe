@@ -500,8 +500,9 @@ def collect_clocked_switch_evidence(root: Path, current_image_id: str) -> dict:
             "ramp_ns": 50.0, "enable_ramp_ns": 5.0, "first_stage": 1, "stage_count": 2}
         if any(params.get(key) != value for key, value in expected.items()):
             raise EvidenceError(f"clocked simulation parameters changed: {condition}")
-        if original.get("control_model") != "clocked" or len(original.get("configuration_cells", [])) != 4:
-            raise EvidenceError(f"clocked simulation lacks four mapped configuration flops: {condition}")
+        # Three registered ring_run enables plus two source-configuration bits.
+        if original.get("control_model") != "clocked" or len(original.get("configuration_cells", [])) != 5:
+            raise EvidenceError(f"clocked simulation lacks the five mapped control flops: {condition}")
         measurements = proof.get("measurements")
         expected_status = "PASS" if safe else proof.get("status")
         if (not isinstance(measurements, dict) or measurements.get("status") != expected_status or

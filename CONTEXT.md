@@ -301,3 +301,25 @@ hosted timing passed independently. Optional local transistor reports are
 correctly absent/unverified in hosted packaging. No order, portal submission or
 visibility change occurred. A documentation-only child commit records this
 outcome; it is not the selected fabrication revision.
+
+## Registered ring enables — 2026-10-23
+
+The user authorized implementing registered ring enables, rerunning full local
+verification and pushing for hosted CI; no submission or order is authorized.
+Each ring NAND enable now comes from its own `ring_run` flip-flop, gated only by
+`ena && rst_n`; the divider reset is their OR. `ring_run` requires the requested
+source to equal the registered one, so a selection change keeps every ring off
+for at least one clock and test-mode pins never touch a running ring. Monitor
+warm-up for ring sources starts with the ring (windows end one clock later);
+register map and interface version 2 are unchanged.
+
+Local results on the rebuilt layout (snapshot `build/iterations/007-automatic`):
+RTL/wrapper (new glitch, off-time and clockless-stop tests; they fail on the old
+design), mapped monitor, routed functional netlist and capture tests pass. Zero
+DRC/LVS/antenna/routing/electrical errors; `inspect-tt.py` now proves ring enable
+and divider reset sources are only `ring_run` plus `ena`/`rst_n`. Nine-corner
+setup/hold 0.511293/0.205175 ns. All 15 local prechecks pass. Schematic SPICE 81
+loaded + 9 unloaded pass. Routed matrix `PASS_SCOPED_PARTITION_MODEL` for the
+first time (67.662–426.658 MHz, /1024 within 0.1%), including the 1 ns cut switch
+control. Clocked report `PASS_SAFE_SWITCH_PROTOCOL` with five control flops.
+`5c18820...` stays the fallback until the new revision passes hosted CI.

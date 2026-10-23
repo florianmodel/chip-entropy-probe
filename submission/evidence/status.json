@@ -20,14 +20,14 @@
       "reason": "fresh PASS report with complete corner coverage"
     },
     "routed-spice.json": {
-      "status": "absent_unverified",
+      "status": "available_scoped_partition_model",
       "source": "build/routed-spice/matrix.json",
-      "reason": "routed matrix is missing, incomplete or failed: FAIL_OR_INCOMPLETE; Partition failed: source-nom-tt-0-1.8-25-50-switch-en5; see .runner.log"
+      "sha256": "ec32e0440d86a52788ca4d31e8178bf65599b7878f952ff00fdb43c90cd9a778"
     },
     "clocked-switch.json": {
       "status": "available_safe_switch_protocol",
       "source": "build/routed-spice/clocked-switch-matrix.json",
-      "sha256": "a3a42b508d5c758df221024197c5de0fd634dcc5251b3c8fb8af9efca414322f"
+      "sha256": "d2a2e06a906b98cb081ca11509f37ae8a5b5fc9872b82fcb5934fba11f3ed846"
     }
   }
 }

@@ -1785,89 +1785,90 @@
       68.0
     ],
     "probe.divider.stage[0].ff": [
-      10.12,
-      87.04,
-      19.32,
-      89.76
-    ],
-    "probe.divider.stage[1].ff": [
       6.44,
       73.44,
       15.64,
       76.16
     ],
+    "probe.divider.stage[1].ff": [
+      6.44,
+      68.0,
+      15.64,
+      70.72
+    ],
     "probe.divider.stage[2].ff": [
-      19.32,
-      76.16,
-      28.52,
-      78.88
+      6.44,
+      78.88,
+      15.64,
+      81.6
     ],
     "probe.divider.stage[3].ff": [
-      19.32,
-      81.6,
-      28.52,
-      84.32
+      16.1,
+      89.76,
+      25.3,
+      92.48
     ],
     "probe.divider.stage[4].ff": [
-      22.54,
-      89.76,
-      31.74,
-      92.48
-    ],
-    "probe.divider.stage[5].ff": [
-      19.32,
-      87.04,
-      28.52,
-      89.76
-    ],
-    "probe.divider.stage[6].ff": [
-      28.98,
+      10.12,
       92.48,
-      38.18,
+      19.32,
       95.2
     ],
-    "probe.divider.stage[7].ff": [
-      19.32,
-      106.08,
-      28.52,
-      108.8
-    ],
-    "probe.divider.stage[8].ff": [
-      32.2,
-      84.32,
-      41.4,
-      87.04
-    ],
-    "probe.divider.stage[9].ff": [
-      35.88,
+    "probe.divider.stage[5].ff": [
+      13.34,
       97.92,
-      45.08,
+      22.54,
       100.64
     ],
-    "_592_": [
-      48.76,
-      89.76,
-      56.58,
-      92.48
+    "probe.divider.stage[6].ff": [
+      4.14,
+      97.92,
+      13.34,
+      100.64
     ],
-    "_593_": [
-      54.74,
-      87.04,
-      62.56,
-      89.76
+    "probe.divider.stage[7].ff": [
+      29.9,
+      100.64,
+      39.1,
+      103.36
+    ],
+    "probe.divider.stage[8].ff": [
+      28.98,
+      103.36,
+      38.18,
+      106.08
+    ],
+    "probe.divider.stage[9].ff": [
+      35.42,
+      97.92,
+      44.62,
+      100.64
+    ],
+    "_561_": [
+      46.46,
+      97.92,
+      54.28,
+      100.64
+    ],
+    "_562_": [
+      56.12,
+      97.92,
+      63.94,
+      100.64
     ]
   },
   "feedback_preserved": true,
   "divider_preserved": true,
+  "registered_ring_enables": true,
   "direct_two_flop_chain_preserved": true,
   "first_stage_fanout": 1,
   "tile_um": [
     161,
     111.52
   ],
-  "setup_slack_ns": 0.49574323826974404,
-  "hold_slack_ns": 0.20424067182261654,
-  "gds_sha256": "90a2db31e5de3ac458acb6232422c9ca1698dba48ec9802672c890a0eb59f8da",
+  "setup_slack_ns": 0.5112934664816443,
+  "hold_slack_ns": 0.20517535473569531,
+  "gds_sha256": "35269a353e57f0ae4c8f1c7c5ecbacc8dbdd8f9d365c6aba5e55d9c460452217",
   "checks": {
     "design__lint_error__count": 0,
     "design__inferred_latch__count": 0,

@@ -39,6 +39,34 @@ for n in lengths:
   inv=cell(base+f'chain[{j}].ro_inv','inv_1');assert inv['connections']['A']==previous;previous=inv['connections']['Y']
  assert gate['connections']['A']==previous
  buf=cell(base+'ro_output','buf_1');assert buf['connections']['A']==previous
+# Ring enables and divider reset must come only from the registered one-hot
+# ring_run flops, gated by ena/rst_n: no other input pin may reach a ring.
+bit_driver={}
+for name,c in m['cells'].items():
+ for port,bits in c['connections'].items():
+  if c['port_directions'][port]=='output':
+   for b in bits:bit_driver[b]=name
+port_bits={b:p for p,v in m['ports'].items() for b in v['bits']}
+def control_sources(bits):
+ flops,ports,seen=set(),set(),set();todo=list(bits)
+ while todo:
+  b=todo.pop()
+  if b in seen or b in ('0','1'):continue
+  seen.add(b)
+  if b in port_bits:ports.add(port_bits[b]);continue
+  name=bit_driver[b];c=m['cells'][name]
+  if '__df' in c['type']:flops.add(name);continue
+  todo+=[x for p,v in c['connections'].items() if c['port_directions'][p]=='input' for x in v]
+ return flops,ports
+run_flops={}
+for k in range(3):
+ bits=m['netnames'][f'probe.ring_run[{k}]']['bits'];drivers=[n for n,c in m['cells'].items() if c['connections'].get('Q')==bits]
+ assert len(drivers)==1 and '__dfxtp_' in m['cells'][drivers[0]]['type'],('ring_run',k,drivers);run_flops[k]=drivers[0]
+for k,n in enumerate(lengths):
+ flops,ports=control_sources(m['cells'][f'probe.bank.ring{n}.ro_gate']['connections']['B'])
+ assert flops=={run_flops[k]} and ports<={'ena','rst_n'},('ring enable sources',n,flops,ports)
+flops,ports=control_sources(m['cells']['probe.divider.stage[0].ff']['connections']['RESET_B'])
+assert flops==set(run_flops.values()) and ports<={'ena','rst_n'},('divider reset sources',flops,ports)
 for j in range(10):
  base=f'probe.divider.stage[{j}].';ff=cell(base+'ff','dfrtp_1');inv=m['cells'][base+'feedback']
  physical_ff=next(x for x in block.getInsts() if x.getName().replace('\\','')==base+'ff')
@@ -77,6 +105,6 @@ lint=(run/'01-verilator-lint/verilator-lint.log').read_text();warnings=re.findal
 assert len(warnings)==20 and set(warnings)=={'PINMISSING'},(len(warnings),set(warnings))
 assert all(p in {'VPWR','VGND','VPB','VNB'} for p in re.findall(r"missing pin: '([^']+)'",lint))
 gds=run/f'final/gds/{design}.gds'
-report=dict(status='FAIL' if failures else 'PASS',failures=failures,design=design,ring_lengths=lengths,positions_um=positions,feedback_preserved=True,divider_preserved=True,direct_two_flop_chain_preserved=True,first_stage_fanout=1,tile_um=[161,111.52],setup_slack_ns=metrics['timing__setup__ws'],hold_slack_ns=metrics['timing__hold__ws'],gds_sha256=hashlib.sha256(gds.read_bytes()).hexdigest(),checks={**{k:metrics.get(k) for k in keys},'design__disconnected_pin__count':metrics.get('design__disconnected_pin__count')},reviewed_unused_inputs=sorted(unused),supply_omission_warnings=len(warnings),limits=['No fabricated entropy or oscillator frequency guarantee.','Timing clocks are explicit assumptions; compare with SPICE and hardware.'])
+report=dict(status='FAIL' if failures else 'PASS',failures=failures,design=design,ring_lengths=lengths,positions_um=positions,feedback_preserved=True,divider_preserved=True,registered_ring_enables=True,direct_two_flop_chain_preserved=True,first_stage_fanout=1,tile_um=[161,111.52],setup_slack_ns=metrics['timing__setup__ws'],hold_slack_ns=metrics['timing__hold__ws'],gds_sha256=hashlib.sha256(gds.read_bytes()).hexdigest(),checks={**{k:metrics.get(k) for k in keys},'design__disconnected_pin__count':metrics.get('design__disconnected_pin__count')},reviewed_unused_inputs=sorted(unused),supply_omission_warnings=len(warnings),limits=['No fabricated entropy or oscillator frequency guarantee.','Timing clocks are explicit assumptions; compare with SPICE and hardware.'])
 (root/'build/tt-verification.json').write_text(json.dumps(report,indent=2)+'\n');print(report['status'],report['failures'])
 if failures and os.environ.get('CHIP_ARCHIVE')!='1':raise SystemExit(1)

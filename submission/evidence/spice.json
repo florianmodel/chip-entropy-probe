@@ -19,7 +19,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 77.49017015007541,
       "rising_edges_after_50ns": 11,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -29,7 +29,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 57.993450135831914,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -39,7 +39,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 43.42606570401956,
       "rising_edges_after_50ns": 7,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -49,7 +49,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 83.09534022714155,
       "rising_edges_after_50ns": 12,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -59,7 +59,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 62.19936337732676,
       "rising_edges_after_50ns": 9,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -69,7 +69,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 46.58118151429375,
       "rising_edges_after_50ns": 7,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -79,7 +79,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 87.77675806587806,
       "rising_edges_after_50ns": 13,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -89,7 +89,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 65.71381730774634,
       "rising_edges_after_50ns": 10,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -99,7 +99,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 49.219359394130336,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -109,7 +109,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 105.83793977954174,
       "rising_edges_after_50ns": 16,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -119,7 +119,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 79.210670785426,
       "rising_edges_after_50ns": 12,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -129,7 +129,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 59.31140994544547,
       "rising_edges_after_50ns": 9,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -139,7 +139,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 108.28011012113161,
       "rising_edges_after_50ns": 16,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -149,7 +149,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 81.05055474550994,
       "rising_edges_after_50ns": 12,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -159,7 +159,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 60.69887220684285,
       "rising_edges_after_50ns": 9,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -169,7 +169,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 109.82588803514653,
       "rising_edges_after_50ns": 16,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -179,7 +179,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 82.21969879959978,
       "rising_edges_after_50ns": 12,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -189,7 +189,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 61.58181271780031,
       "rising_edges_after_50ns": 9,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -199,7 +199,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 125.33728760214076,
       "rising_edges_after_50ns": 19,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -209,7 +209,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 93.80711488375921,
       "rising_edges_after_50ns": 14,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -219,7 +219,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 70.24555052189922,
       "rising_edges_after_50ns": 11,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -229,7 +229,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 125.66391609336165,
       "rising_edges_after_50ns": 19,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -239,7 +239,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 94.0644964324972,
       "rising_edges_after_50ns": 14,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -249,7 +249,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 70.44362305488254,
       "rising_edges_after_50ns": 11,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -259,7 +259,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 125.03091224029771,
       "rising_edges_after_50ns": 19,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -269,7 +269,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 93.60103101530308,
       "rising_edges_after_50ns": 14,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "tt",
@@ -279,7 +279,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 70.10546400761818,
       "rising_edges_after_50ns": 11,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -289,7 +289,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 112.15287657245072,
       "rising_edges_after_50ns": 17,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -299,7 +299,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 83.92965978416439,
       "rising_edges_after_50ns": 12,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -309,7 +309,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 62.84434817556922,
       "rising_edges_after_50ns": 9,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -319,7 +319,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 119.66552134190867,
       "rising_edges_after_50ns": 18,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -329,7 +329,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 89.56309112078186,
       "rising_edges_after_50ns": 13,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -339,7 +339,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 67.06801790066895,
       "rising_edges_after_50ns": 10,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -349,7 +349,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 125.72434613167273,
       "rising_edges_after_50ns": 18,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -359,7 +359,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 94.1110007494033,
       "rising_edges_after_50ns": 14,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -369,7 +369,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 70.48098648747899,
       "rising_edges_after_50ns": 11,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -379,7 +379,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 144.4373643839372,
       "rising_edges_after_50ns": 22,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -389,7 +389,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 108.08341050054399,
       "rising_edges_after_50ns": 16,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -399,7 +399,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 80.92839952389491,
       "rising_edges_after_50ns": 12,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -409,7 +409,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 148.20684728307853,
       "rising_edges_after_50ns": 23,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -419,7 +419,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 110.92347914985444,
       "rising_edges_after_50ns": 17,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -429,7 +429,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 83.06352600031082,
       "rising_edges_after_50ns": 12,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -439,7 +439,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 150.3849656371701,
       "rising_edges_after_50ns": 23,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -449,7 +449,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 112.56883544095874,
       "rising_edges_after_50ns": 17,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -459,7 +459,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 84.30329530741055,
       "rising_edges_after_50ns": 13,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -469,7 +469,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 165.98941053419145,
       "rising_edges_after_50ns": 25,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -479,7 +479,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 124.2167385409522,
       "rising_edges_after_50ns": 19,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -489,7 +489,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 93.01148331521276,
       "rising_edges_after_50ns": 14,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -499,7 +499,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 167.1297285578991,
       "rising_edges_after_50ns": 25,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -509,7 +509,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 125.08527101703075,
       "rising_edges_after_50ns": 19,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -519,7 +519,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 93.66822634489307,
       "rising_edges_after_50ns": 14,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -529,7 +529,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 166.66907087586154,
       "rising_edges_after_50ns": 25,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -539,7 +539,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 124.7639188527172,
       "rising_edges_after_50ns": 19,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -549,7 +549,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 93.43499301960232,
       "rising_edges_after_50ns": 14,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -559,7 +559,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 48.133370912808154,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -569,7 +569,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 36.02678333893388,
       "rising_edges_after_50ns": 5,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -579,7 +579,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 26.978381850389948,
       "rising_edges_after_50ns": 5,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -589,7 +589,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 52.56584759853757,
       "rising_edges_after_50ns": 7,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -599,7 +599,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 39.352250772202794,
       "rising_edges_after_50ns": 6,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -609,7 +609,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 29.473652820164293,
       "rising_edges_after_50ns": 4,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -619,7 +619,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 56.15696644843752,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -629,7 +629,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 42.04936426220084,
       "rising_edges_after_50ns": 6,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -639,7 +639,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 31.498736867355838,
       "rising_edges_after_50ns": 4,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -649,7 +649,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 70.55931110211061,
       "rising_edges_after_50ns": 11,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -659,7 +659,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 52.81355597401137,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -669,7 +669,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 39.550621251748,
       "rising_edges_after_50ns": 6,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -679,7 +679,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 72.38173019796268,
       "rising_edges_after_50ns": 11,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -689,7 +689,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 54.18786052166876,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -699,7 +699,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 40.58535654470589,
       "rising_edges_after_50ns": 6,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -709,7 +709,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 73.49634506281897,
       "rising_edges_after_50ns": 11,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -719,7 +719,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 55.032238296386645,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -729,7 +729,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 41.223827660943996,
       "rising_edges_after_50ns": 6,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -739,7 +739,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 86.80569370899049,
       "rising_edges_after_50ns": 13,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -749,7 +749,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 64.9756001962603,
       "rising_edges_after_50ns": 10,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -759,7 +759,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 48.659814697631745,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -769,7 +769,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 86.73678227552782,
       "rising_edges_after_50ns": 13,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -779,7 +779,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 64.93543840656234,
       "rising_edges_after_50ns": 10,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -789,7 +789,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 48.63490328789758,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -799,7 +799,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 86.00536377430237,
       "rising_edges_after_50ns": 13,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -809,7 +809,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 64.39813509131432,
       "rising_edges_after_50ns": 10,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ss",
@@ -819,7 +819,7 @@
       "wire_load_fF_per_stage": 5,
       "frequency_MHz": 48.23932917669458,
       "rising_edges_after_50ns": 8,
-      "cache": "simulated"
+      "cache": "reused"
     }
   ],
   "unloaded_fast_cases": [
@@ -831,7 +831,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 390.8738573011767,
       "rising_edges_after_50ns": 59,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -841,7 +841,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 292.7426699860437,
       "rising_edges_after_50ns": 44,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -851,7 +851,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 219.2982695020752,
       "rising_edges_after_50ns": 33,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -861,7 +861,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 390.6250404877462,
       "rising_edges_after_50ns": 59,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -871,7 +871,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 292.96234455943863,
       "rising_edges_after_50ns": 44,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -881,7 +881,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 219.2982563014947,
       "rising_edges_after_50ns": 33,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -891,7 +891,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 385.3298070087934,
       "rising_edges_after_50ns": 58,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -901,7 +901,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 288.8261028237437,
       "rising_edges_after_50ns": 43,
-      "cache": "simulated"
+      "cache": "reused"
     },
     {
       "corner": "ff",
@@ -911,7 +911,7 @@
       "wire_load_fF_per_stage": 0,
       "frequency_MHz": 216.40906818747933,
       "rising_edges_after_50ns": 33,
-      "cache": "simulated"
+      "cache": "reused"
     }
   ]
 }

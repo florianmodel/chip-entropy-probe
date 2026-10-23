@@ -283,7 +283,7 @@ class EvidencePipelineTests(unittest.TestCase):
             # based on the independent, current reanalysis and raw waveform.
             original = {"status": "FAIL" if scenario == "switch-safe" else "PASS", "failures": [],
                 "input_fingerprints": inputs, "parameters": parameters, "control_model": "clocked",
-                "configuration_cells": ["cfg0a", "cfg0b", "cfg1a", "cfg1b"]}
+                "configuration_cells": ["run0", "run1", "run2", "cfg2", "cfg3"]}
             report_path = write(stem + ".measure.json", json.dumps(original, indent=2) + "\n")
             artifacts = {stem + ".sp": sha256_file(deck), stem + ".dat": sha256_file(root / (stem + ".dat")),
                 stem + ".signals.json": sha256_file(root / (stem + ".signals.json")),

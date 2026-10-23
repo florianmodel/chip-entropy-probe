@@ -192,3 +192,31 @@ change is a guarded firmware operating protocol plus a clocked verification
 model, regression tests, documentation and freshness-checked evidence packaging.
 The legacy ideal-Q matrix remains failed and preserved. Delivered-board checks,
 entropy characterization and a fresh hosted workflow remain outstanding.
+
+## Registered ring enables — 2026-10-23
+
+The design now drives each ring's NAND enable from its own registered `ring_run`
+flip-flop, gated only by `ena` and `rst_n`; the divider reset is their OR. In the
+cut model the source cone's only boundaries are `ena`, `rst_n` and the three
+`ring_run` Q nets, so no selection, enable or test-mode pin reaches a ring
+combinationally. The cut switch stimulus stops the old ring at the configuration
+update and starts the new one a 20 ns host period later, as the flip-flops do.
+The clocked model now includes five mapped control flops (three `ring_run`, two
+source-configuration bits) and observes `configuration[3:2]`.
+
+On the rebuilt layout the complete matrix is `PASS_SCOPED_PARTITION_MODEL`:
+
+| Model / RC | Ring71 MHz | Ring95 MHz | Ring127 MHz |
+| --- | ---: | ---: | ---: |
+| TT / nom | 260.373 | 197.352 | 146.706 |
+| FF / min | 426.658 | 315.689 | 238.158 |
+| SS / max | 120.953 | 90.696 | 67.662 |
+
+Composed divider ratios span 1023.240–1024.990. The nominal restart/reset and the
+1 ns cut-control switch controls both passed all three phases; the switch phases
+measured 260.370/197.352/146.692 MHz with no higher-mode oscillation. The earlier
+585 MHz failure belonged to the previous combinational enable path and its
+preserved traces remain historical. The clocked report is again
+`PASS_SAFE_SWITCH_PROTOCOL`: all three guarded cases and both live diagnostics
+passed, 67.704–424.062 MHz, minimum safe-phase high/low widths 1.055/1.023 ns.
+Scope and limits above are unchanged; this is not silicon validation.

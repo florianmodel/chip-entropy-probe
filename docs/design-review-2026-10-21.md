@@ -460,3 +460,11 @@ absent/unverified in hosted evidence. See [the release record](release-2026-10-2
 for exact artifact hashes and scope. Prior statements that fresh hosted CI was
 outstanding describe earlier stages and are superseded by this result.
 Delivered-board and entropy validation remain open. No order was placed.
+
+## Registered ring-enable revision — 2026-10-23
+
+The review's later observation that input pins (including irrelevant test-mode
+pins) could combinationally glitch a ring enable and divider reset was fixed in
+RTL with registered one-hot `ring_run` enables. The rebuilt layout passes full
+local signoff, and the previously failed routed matrix now completes
+`PASS_SCOPED_PARTITION_MODEL`. See `routed-verification.md` and `CONTEXT.md`.

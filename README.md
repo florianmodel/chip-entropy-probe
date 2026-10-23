@@ -249,7 +249,15 @@ signature. The integrated revision uses `examples/resilient-probe/`: selectable 
 127-stage physical rings, one enabled at a time, a /1024 frequency output, and
 zero/one/alternating/external-input test modes. A configuration change immediately
 invalidates samples, aborts the partial window and restarts the two-edge warm-up.
-Completed reports retain source/test configuration. The firmware helper pauses
+Completed reports retain source/test configuration. Ring enables are three
+registered one-hot flip-flops (`ring_run`), gated only by `ena` and `rst_n`, so
+pin glitches between clock edges cannot stop or restart a ring. A ring starts one
+edge after its selection is captured, and its monitor warm-up starts on that same
+edge; ring-source windows therefore complete one clock later than test-mode
+windows. A ring selection change leaves every ring off for at least one clock
+period. Test-mode pins never stop a running ring, although changing them still
+aborts the monitor's partial window. `ena` and `rst_n` stop the ring without a
+clock edge. The register map is unchanged. The firmware helper pauses
 acquisition and clocks the old and new requests separately during configuration;
 direct source changes while enabled are not a qualified operating protocol.
 This is interface **version 2**;
@@ -402,6 +410,7 @@ Numbered snapshots under `build/iterations/` preserve sources, final GDS and PNG
 - `001-short-rings-timing-failure`: 5/11/23 stages; digital features added, divider setup failed.
 - `002-long-rings-electrical-failure`: 47/71/95 stages; setup passed, but routing caused slew/capacitance violations. An unloaded fast simulation also exceeded the 500 MHz ceiling.
 - `003-compact-rings`: 71/95/127 stages in fixed two-row serpentine placement. Full physical checks pass, with setup 0.496 ns and hold 0.204 ns across configured timing corners.
+- `007-automatic`: registered one-hot ring enables (2026-10-23). Full physical checks and all 15 local prechecks pass; nine-corner setup 0.511 ns and hold 0.205 ns. The complete routed transistor/RC matrix, including the 1 ns cut-control switch case, now passes.
 
 `architecture.png` explains the logical design. `tt-layout.png`,
 `tt-layout-detail.png` and individual `tt-layout-ring-N.png` files show real routed
@@ -452,8 +461,11 @@ that exporting preserves the physical design.
 Hosted `gds` first rebuilds with the pinned container, PDK and compact-ring
 placement, then verifies RTL, mapped logic, routed logic and capture decoding.
 It runs Tiny Tapeout's pinned custom-GDS packaging and independent shuttle
-precheck. `docs` generates the official PDF. The selected, verified fabrication
-revision is **`5c18820752c6f92c0c089366977bce73828617c0`**.
+precheck. `docs` generates the official PDF. The 2026-10-23 registered ring-enable
+revision supersedes the earlier selection below; its exact SHA is selected only
+after its hosted GDS and Docs workflows pass, and is recorded in a dated release
+record. Until then, the previous verified fabrication revision is
+**`5c18820752c6f92c0c089366977bce73828617c0`**.
 
 - [GDS build, packaging and precheck](https://github.com/florianmodel/chip-entropy-probe/actions/runs/39663509277)
 - [Official datasheet generation](https://github.com/florianmodel/chip-entropy-probe/actions/runs/39663509368)

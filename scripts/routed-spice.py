@@ -18,6 +18,9 @@ PDK=ROOT/'.tools/pdk/sky130A'
 LIBCELL=PDK/'libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice'
 IMAGE='chip-ngspice:39'
 POWER={'VGND':'0','VNB':'0','VPB':'vdd','VPWR':'vdd'}
+# Registered one-hot ring enables plus the two source-configuration bits they compare.
+CONTROL_NETS={'probe.ring_run[0]','probe.ring_run[1]','probe.ring_run[2]','probe.configuration[2]','probe.configuration[3]'}
+CONTROL_FLOPS=len(CONTROL_NETS)
 
 def norm(s): return s.replace('\\','').strip()
 
@@ -83,13 +86,12 @@ def build_partition(part,rc='nom',first=0,count=10,corner='tt',control_model='cu
     # Explicitly include each ring. Disabled branches remain real physical cells.
     if part=='source':seeds += [n for n in cs if n.startswith('probe.bank.ring')]
     cut_net='probe.bank.raw_out' if first==0 else f'probe.divider.q[{first-1}]'
-    config_nets={'probe.bank.select[0]','probe.bank.select[1]','probe.configuration[0]','probe.configuration[1]'}
-    controls={name for name,c in cs.items() if any(c['pins'][p] in config_nets for p in output_pins(c))} if control_model=='clocked' else set()
+    controls={name for name,c in cs.items() if any(c['pins'][p] in CONTROL_NETS for p in output_pins(c))} if control_model=='clocked' else set()
     if control_model=='clocked':
-        assert part=='source' and len(controls)==4,'Clocked source requires four mapped configuration flops'
+        assert part=='source' and len(controls)==CONTROL_FLOPS,'Clocked source requires the mapped ring_run and source-configuration flops'
         seeds+=sorted(controls)
     selected,bounds,drivers=cone(cs,seeds,{cut_net} if part=='divider' else set(),controls)
-    if control_model=='clocked':assert not (config_nets & set(bounds)),'Configuration Q must not be driven ideally'
+    if control_model=='clocked':assert not (CONTROL_NETS & set(bounds)),'Control flop Q must not be driven ideally'
     nets={n for name in selected for p,n in cs[name]['pins'].items() if p not in POWER}
     # Locate excluded fanout pins so their Liberty input capacitance remains
     # attached at the extracted physical terminal.
@@ -162,7 +164,7 @@ def build_partition(part,rc='nom',first=0,count=10,corner='tt',control_model='cu
         name,p=drivers['probe.bank.raw_out'][0];observations['raw']=endpoints[name][p]
     else:observations['out']=endpoints[f'probe.divider.stage[{stages[-1]}].ff']['Q']
     if control_model=='clocked':
-        for bit,net in enumerate(['probe.bank.select[0]','probe.bank.select[1]']):
+        for bit,net in enumerate(['probe.configuration[2]','probe.configuration[3]']):
             driver,pin=drivers[net][0];observations[f'config{bit}']=endpoints[driver][pin]
         observations['host_clock']=ports['clk']
     definitions='\n'.join(blocks[t][1] for t in sorted(types))
@@ -176,7 +178,8 @@ def level_for(net,selection):
     if net.startswith('ui_in['):
         bit=int(re.search(r'\[(\d+)\]',net)[1]);return {3:1,5:1,6:selection&1,7:(selection>>1)&1}.get(bit,0)
     if net.startswith('uio_in['):return 0
-    if net.startswith('probe.bank.select['):return (selection>>int(net[-2]))&1
+    if net.startswith('probe.ring_run['):return int(int(net[-2])==selection)
+    if net in ('probe.configuration[2]','probe.configuration[3]'):return (selection>>(int(net[-2])-2))&1
     if net in ('probe.configuration[0]','probe.configuration[1]','probe.alternate'):return 0
     raise ValueError('Unspecified boundary: '+net)
 
@@ -246,18 +249,29 @@ def run(args):
             lines.append(f'Vboundary{i} {n} 0 PULSE(0 {args.voltage} 10n 0.1n 0.1n {period_ns/2-.1:g}n {period_ns:g}n)')
         else:
             high=level_for(net,args.selection)*args.voltage
-            when=enable if net=='ui_in[3]' else ramp
+            # In the cut model a ring_run flop follows enable one host clock later.
+            run=net.startswith('probe.ring_run[');latency=args.host_period_ns*1e-9 if run else 0
+            when=enable if net=='ui_in[3]' or run else ramp
             edge=args.enable_ramp_ns*1e-9 if net=='ui_in[3]' else 1e-10
             points=[(0,0),(max(0,when-edge),0),(when,high)]
             total=args.duration_ns*1e-9
-            if args.scenario=='restart' and net in ('ui_in[3]','rst_n'):
-                off,on=(.35,.45) if net=='ui_in[3]' else (.65,.70)
+            if args.scenario=='restart' and (net in ('ui_in[3]','rst_n') or run):
+                off,on=(.35,.45) if net!='rst_n' else (.65,.70)
+                if run:off,on=off+latency/total,on+latency/total
                 points += [(total*off,high),(total*off+1e-10,0),(total*on,0),(total*on+1e-10,high)]
-            if args.scenario in ('switch','switch-safe') and net in ('ui_in[6]','ui_in[7]','probe.bank.select[0]','probe.bank.select[1]'):
-                bit=0 if net in ('ui_in[6]','probe.bank.select[0]') else 1
+            if args.scenario=='switch' and run:
+                # Registered enables: the old ring stops at the configuration
+                # update and the new ring starts one host clock later.
+                ring=int(net[-2]);previous=args.selection
                 for fraction,sel in [(.3,1),(.6,2)]:
-                    delay=getattr(args,'configuration_latency_ns',1)*1e-9 if net.startswith('probe.bank.select') else 0
-                    change=total*fraction+delay
+                    change=total*fraction+getattr(args,'configuration_latency_ns',1)*1e-9
+                    if ring==previous:points += [(change,points[-1][1]),(change+1e-10,0)]
+                    if ring==sel:points += [(change+latency,points[-1][1]),(change+latency+1e-10,args.voltage)]
+                    previous=sel
+            if args.scenario in ('switch','switch-safe') and net in ('ui_in[6]','ui_in[7]'):
+                bit=0 if net=='ui_in[6]' else 1
+                for fraction,sel in [(.3,1),(.6,2)]:
+                    change=total*fraction
                     if args.control_model=='clocked':
                         edge_ns=10+math.ceil((args.duration_ns*fraction-10)/args.host_period_ns)*args.host_period_ns
                         change=(edge_ns-args.request_lead_ns)*1e-9
@@ -505,7 +519,7 @@ def main():
     p.add_argument('--stage-count',type=int,default=2)
     p.add_argument('--prepare-only',action='store_true')
     p.add_argument('--scenario',choices=['steady','restart','switch','switch-safe'],default='steady')
-    p.add_argument('--configuration-latency-ns',type=float,default=1,help='Cut configuration-Q response delay in switch experiment; not a synchronous control model')
+    p.add_argument('--configuration-latency-ns',type=float,default=1,help='Cut-model delay from request to configuration update in switch experiment; not a synchronous control model')
     p.add_argument('--control-model',choices=['cut','clocked'],default='cut')
     p.add_argument('--host-period-ns',type=float,default=20)
     p.add_argument('--request-lead-ns',type=float,default=2,help='Request transition before the targeted host rising edge')

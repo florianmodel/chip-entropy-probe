@@ -38,7 +38,7 @@ def one(case,image_id,collect_only):
         original=json.loads(path.read_text())
         assert original['status'] in ('PASS','FAIL') and 'parameters' in original
         _routed_current_fingerprints(ROOT,original,image_id)
-        assert original.get('control_model')=='clocked' and len(original['configuration_cells'])==4
+        assert original.get('control_model')=='clocked' and len(original['configuration_cells'])==r.CONTROL_FLOPS
         for key,value in vars(args).items():
             assert original['parameters'].get(key)==value,(key,'changed experiment')
         before=sha256_file(path.with_suffix('').with_suffix('.sp'))

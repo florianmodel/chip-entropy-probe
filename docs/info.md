@@ -3,9 +3,14 @@
 This experimental chip measures physical ring-oscillator samples. It is a learning
 and characterization device; it does not provide validated cryptographic random
 numbers. Three odd-inversion rings (71, 95 and 127 stages) use fixed two-row
-placement. Only the selected ring runs. A two-flop synchronizer samples the source
-on the project clock. Two acquisition edges fill the pipeline; the third edge
-counts the first sample. Each nonoverlapping window counts 256 samples and the
+placement. Only the selected ring runs. Ring enables are registered one-hot
+flip-flops: a ring starts one clock edge after its selection is captured, and
+pin changes between clock edges cannot stop or restart it. Changing the ring
+selection leaves every ring off for at least one clock period. Test-mode pins
+never affect a running ring. ena and reset still stop the ring without a clock.
+A two-flop synchronizer samples the source on the project clock. Two acquisition
+edges fill the pipeline; the third edge counts the first sample. For ring sources
+this warm-up starts on the edge that starts the ring. Each nonoverlapping window counts 256 samples and the
 255 transitions within that window. Reports can be frozen while sampling continues.
 Changing source or test configuration discards the partial window and restarts
 warm-up. Completed reports retain the configuration that produced them. For
